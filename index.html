@@ -1,0 +1,3532 @@
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<title>NexyFlow — Sites & Tráfego Pago para gerar demanda</title>
+<meta name="description" content="Estratégia digital com sites, Google Ads e Meta Ads conectados para transformar atenção em oportunidade comercial.">
+<link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>document.documentElement.classList.add("tw-ready");</script>
+<style>
+html { scroll-behavior: smooth; }
+body {
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+background: #020617;
+color: #f8fafc;
+margin: 0;
+}
+.nexy-site {
+background:
+radial-gradient(circle at top left, rgba(192, 132, 252, 0.16), transparent 24%),
+linear-gradient(135deg, #020617 0%, #050816 100%);
+color: #f8fafc;
+min-height: 100vh;
+}
+.nexy-site a { color: inherit; }
+@keyframes nexySectionReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 56px, 0);
+    filter: blur(7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+@keyframes nexyCardReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 44px, 0) scale(.96);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+.nexy-animations-ready .reveal,
+.nexy-animations-ready .card-reveal {
+  opacity: 0;
+  will-change: opacity, transform, filter;
+}
+.nexy-animations-ready .reveal.is-visible {
+  animation: nexySectionReveal 1.05s cubic-bezier(.16, 1, .3, 1) both !important;
+}
+.nexy-animations-ready .card-reveal.is-visible {
+  animation: nexyCardReveal .95s cubic-bezier(.16, 1, .3, 1) both !important;
+  animation-delay: var(--reveal-delay, 0ms) !important;
+}
+.reveal.animation-done,
+.card-reveal.animation-done {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0);
+  filter: none;
+  animation: none !important;
+  will-change: auto;
+}
+.skip-link{position:fixed;left:1rem;top:-4rem;z-index:100;background:#fff;color:#020617;padding:.75rem 1rem;border-radius:.5rem;font-weight:700;transition:top .2s}
+.skip-link:focus-visible{top:1rem}
+.skip-link:not(:focus-visible){top:-5rem!important}
+img{max-width:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+noscript .reveal,
+noscript .card-reveal{opacity:1!important;transform:none!important}
+html:not(.tw-ready) body{visibility:hidden}
+html.tw-ready body{visibility:visible}
+.reveal,
+.card-reveal {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+nav,
+nav *,
+footer,
+footer * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  translate: none !important;
+  will-change: auto !important;
+}
+.nexy-fullhero{
+  --hero-scroll:0;
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  isolation:isolate;
+  padding:8.5rem 1.5rem 4rem;
+  background:#020617;
+}
+.nexy-fullhero__video{
+  position:absolute;
+  inset:0;
+  z-index:-8;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  background:#020617;
+  transform:scale(1.015);
+}
+.nexy-fullhero__overlay{
+  position:absolute;
+  inset:0;
+  z-index:-7;
+  background:
+    linear-gradient(90deg,rgba(2,6,23,.96) 0%,rgba(2,6,23,.82) 34%,rgba(2,6,23,.26) 63%,rgba(2,6,23,.28) 100%),
+    linear-gradient(180deg,rgba(2,6,23,.35),transparent 24%,transparent 65%,rgba(2,6,23,.95));
+}
+.nexy-fullhero__grain{
+  position:absolute;
+  inset:0;
+  z-index:-5;
+  opacity:.055;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.72'/%3E%3C/svg%3E");
+}
+.nexy-fullhero__particles{
+  position:absolute;
+  inset:-18%;
+  z-index:-4;
+  opacity:.12;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.85) 0 1px,transparent 1.6px),
+    radial-gradient(circle,rgba(147,197,253,.65) 0 1px,transparent 1.6px);
+  background-size:64px 64px,96px 96px;
+  background-position:0 0,28px 35px;
+  animation:nexyFullSnow 18s linear infinite;
+}
+.nexy-fullhero__particles--two{
+  z-index:5;
+  opacity:.16;
+  filter:blur(.2px);
+  background-size:108px 108px,152px 152px;
+  animation-duration:12s;
+  animation-direction:reverse;
+}
+@keyframes nexyFullSnow{to{transform:translate3d(-6%,11%,0)}}
+.nexy-fullhero__inner{
+  width:min(1200px,100%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,.86fr) minmax(440px,1.14fr);
+  gap:4rem;
+  align-items:center;
+  position:relative;
+  z-index:3;
+}
+.nexy-fullhero__copy{
+  transform:translateY(calc(var(--hero-scroll)*-28px));
+  opacity:calc(1 - var(--hero-scroll)*.72);
+  will-change:transform,opacity;
+}
+.nexy-fullhero__eyebrow{
+  display:inline-block;
+  margin-bottom:1.4rem;
+  color:#c4b5fd;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.24em;
+}
+.nexy-fullhero h1{
+  margin:0;
+  max-width:760px;
+  font-size:clamp(3.5rem,6.2vw,7rem);
+  line-height:.9;
+  letter-spacing:-.065em;
+  font-weight:800;
+  text-wrap:balance;
+}
+.nexy-fullhero h1 span{
+  display:block;
+  color:transparent;
+  background:linear-gradient(105deg,#60a5fa 0%,#6366f1 46%,#a855f7 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+}
+.nexy-fullhero p{
+  max-width:620px;
+  margin:2rem 0 0;
+  color:#b7c2d4;
+  font-size:clamp(1rem,1.3vw,1.18rem);
+  line-height:1.65;
+}
+.nexy-fullhero p strong{color:#fff;font-weight:600}
+.nexy-fullhero__actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.9rem;
+  margin-top:2.2rem;
+}
+.nexy-fullhero__button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.8rem;
+  min-height:3.5rem;
+  padding:0 1.45rem;
+  border-radius:999px;
+  text-decoration:none!important;
+  font-weight:700;
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease,border-color .25s ease;
+}
+.nexy-fullhero__button:hover{transform:translateY(-3px)}
+.nexy-fullhero__button--primary{
+  color:#fff!important;
+  background:linear-gradient(115deg,#2563eb,#9333ea);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 14px 44px rgba(79,70,229,.28);
+}
+.nexy-fullhero__button--secondary{
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(15,23,42,.5);
+  backdrop-filter:blur(14px);
+}
+.nexy-fullhero__metrics{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1rem;
+  max-width:630px;
+  margin-top:3rem;
+  padding-top:1.35rem;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.nexy-fullhero__metrics div{
+  padding-left:1rem;
+  border-left:1px solid rgba(192,132,252,.23);
+}
+.nexy-fullhero__metrics strong,.nexy-fullhero__metrics span{display:block}
+.nexy-fullhero__metrics strong{
+  color:#e9d5ff;
+  font-size:1.08rem;
+}
+.nexy-fullhero__metrics span{
+  margin-top:.2rem;
+  color:#718096;
+  font-size:.72rem;
+}
+.nexy-fullhero__visual-space{min-height:620px}
+.nexy-fullhero__scroll{
+  position:absolute;
+  z-index:8;
+  left:50%;
+  bottom:1.4rem;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  color:#64748b!important;
+  text-decoration:none!important;
+  font-size:.61rem;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.nexy-fullhero__scroll span{
+  width:1rem;
+  height:1.7rem;
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:999px;
+  position:relative;
+}
+.nexy-fullhero__scroll span::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:.28rem;
+  width:2px;
+  height:.35rem;
+  transform:translateX(-50%);
+  border-radius:999px;
+  background:#93c5fd;
+  animation:nexyHeroScroll 1.7s ease-in-out infinite;
+}
+@keyframes nexyHeroScroll{
+  0%{opacity:0;transform:translate(-50%,0)}
+  40%{opacity:1}
+  100%{opacity:0;transform:translate(-50%,.62rem)}
+}
+@media(max-width:900px){.nexy-fullhero{
+    min-height:auto;
+    padding-top:7.5rem;
+    padding-bottom:5.5rem;
+  }
+.nexy-fullhero__inner{
+    grid-template-columns:1fr;
+    gap:2rem;
+  }
+.nexy-fullhero__visual-space{
+    min-height:460px;
+    grid-row:1;
+  }
+.nexy-fullhero__copy{
+    grid-row:2;
+    text-align:center;
+  }
+.nexy-fullhero p{margin-left:auto;margin-right:auto}
+.nexy-fullhero__actions{justify-content:center}
+.nexy-fullhero__metrics{margin-left:auto;margin-right:auto;text-align:left}
+.nexy-fullhero__overlay{
+    background:
+      linear-gradient(180deg,rgba(2,6,23,.18),rgba(2,6,23,.3) 42%,rgba(2,6,23,.88) 63%,rgba(2,6,23,.98) 100%);
+  }}
+@media(max-width:620px){.nexy-fullhero{padding:6.5rem 1rem 4.5rem}
+.nexy-fullhero__video{object-position:58% center}
+.nexy-fullhero__visual-space{min-height:360px}
+.nexy-fullhero h1{font-size:clamp(2.8rem,14vw,4.5rem)}
+.nexy-fullhero__actions{flex-direction:column}
+.nexy-fullhero__button{width:100%}
+.nexy-fullhero__metrics{gap:.45rem}
+.nexy-fullhero__metrics div{padding-left:.65rem}
+.nexy-fullhero__metrics strong{font-size:.95rem}
+.nexy-fullhero__metrics span{font-size:.62rem}
+.nexy-fullhero__scroll{display:none}}
+@media(prefers-reduced-motion:reduce){.nexy-fullhero__particles,
+  .nexy-fullhero__scroll span::after{animation:none!important}
+.nexy-fullhero__copy{transform:none!important;opacity:1!important}}
+.nexy-premium-section{
+  position:relative;
+  padding:clamp(6rem,9vw,9rem) 1.5rem;
+  overflow:hidden;
+  background:#020617!important;
+}
+.nexy-premium-container{width:min(1180px,100%);margin:0 auto}
+.nexy-section-kicker{
+  display:inline-block;
+  margin-bottom:1.15rem;
+  color:#c4b5fd;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.24em;
+}
+.nexy-section-intro{max-width:900px;margin-bottom:4rem}
+.nexy-section-intro h2{
+  margin:0;
+  font-size:clamp(2.8rem,5vw,5.4rem);
+  line-height:.98;
+  letter-spacing:-.055em;
+  font-weight:800;
+}
+.nexy-section-intro h2 span{color:#7c879d}
+.nexy-section-intro p{
+  max-width:720px;
+  margin:1.5rem 0 0;
+  color:#94a3b8;
+  font-size:1.05rem;
+  line-height:1.7;
+}
+.nexy-section-intro--compact{max-width:760px}
+.nexy-section-intro--row{
+  max-width:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:2rem;
+}
+.nexy-section-intro--row>div{max-width:850px}
+.nexy-text-link{
+  flex:none;
+  color:#fff!important;
+  text-decoration:none!important;
+  padding-bottom:.35rem;
+  border-bottom:1px solid rgba(255,255,255,.3);
+  font-weight:700;
+}
+.nexy-services::before{
+  content:"";
+  position:absolute;
+  width:42rem;height:42rem;
+  right:-18rem;top:3rem;
+  border-radius:50%;
+  background:rgba(79,70,229,.13);
+  filter:blur(100px);
+}
+.nexy-process{background:linear-gradient(180deg,#020617,#07101f 52%,#020617)!important}
+.nexy-process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  border:1px solid rgba(148,163,184,.12);
+  border-radius:2rem;
+  overflow:hidden;
+  background:rgba(148,163,184,.12);
+}
+.nexy-process-step{
+  min-height:310px;
+  padding:2rem;
+  background:#050b19!important;
+}
+.nexy-process-step>span{color:#a78bfa;font-size:.75rem;letter-spacing:.18em}
+.nexy-process-step h3{margin:5rem 0 .8rem;font-size:1.6rem;letter-spacing:-.03em}
+.nexy-process-step p{color:#94a3b8;line-height:1.65}
+.nexy-portfolio{background:#030712!important}
+.nexy-project-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.nexy-project-premium{
+  border:1px solid rgba(148,163,184,.12);
+  border-radius:2rem;
+  overflow:hidden;
+  background:#070d1c!important;
+  transition:transform .35s ease,border-color .35s ease;
+}
+.nexy-project-premium:hover{transform:translateY(-7px);border-color:rgba(192,132,252,.35)}
+.nexy-project-premium--wide{grid-column:1/-1}
+.nexy-project-premium a{display:block;color:inherit!important;text-decoration:none!important}
+.nexy-project-media{aspect-ratio:16/10;overflow:hidden;background:#0f172a}
+.nexy-project-premium--wide .nexy-project-media{aspect-ratio:21/8}
+.nexy-project-media img{
+  display:block;width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .7s cubic-bezier(.2,.8,.2,1);
+}
+.nexy-project-media--showcase{background:#020617}
+.nexy-project-media--showcase img{object-fit:cover;object-position:center}
+.nexy-project-premium:hover img{transform:scale(1.045)}
+.nexy-project-meta{
+  display:flex;justify-content:space-between;gap:1.5rem;
+  padding:1.5rem 1.7rem 1.8rem;
+}
+.nexy-project-meta span{color:#a78bfa;font-size:.65rem;font-weight:800;letter-spacing:.18em}
+.nexy-project-meta h3{margin:.55rem 0 0;font-size:1.35rem;letter-spacing:-.03em}
+.nexy-project-meta>strong{color:#475569;font-size:.8rem}
+.nexy-proof{background:linear-gradient(145deg,#07101f,#020617 60%)!important}
+.nexy-proof-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:5rem;align-items:start}
+.nexy-proof-score{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+.nexy-proof-score strong{display:block;font-size:5rem;line-height:1;color:#c4b5fd;letter-spacing:-.07em}
+.nexy-proof-score span{color:#64748b}
+.nexy-testimonials{display:grid;gap:1rem}
+.nexy-testimonial{
+  margin:0;
+  padding:2rem;
+  border:1px solid rgba(148,163,184,.12);
+  border-radius:1.7rem;
+  background:rgba(15,23,42,.62)!important;
+}
+.nexy-testimonial p{margin:0;color:#e2e8f0;font-size:1.15rem;line-height:1.65}
+.nexy-testimonial footer{margin-top:1.5rem}
+.nexy-testimonial footer strong,.nexy-testimonial footer span{display:block}
+.nexy-testimonial footer span{color:#64748b;font-size:.78rem;margin-top:.2rem}
+.nexy-qualification{
+  background:
+    radial-gradient(circle at 12% 20%,rgba(37,99,235,.15),transparent 28%),
+    radial-gradient(circle at 92% 80%,rgba(147,51,234,.13),transparent 30%),
+    #020617!important;
+}
+.nexy-qualification-grid{display:grid;grid-template-columns:.76fr 1.24fr;gap:5rem;align-items:start}
+.nexy-qualification-copy{position:sticky;top:8rem}
+.nexy-qualification-copy h2{
+  margin:0;
+  font-size:clamp(2.7rem,4.5vw,5rem);
+  line-height:.98;
+  letter-spacing:-.055em;
+}
+.nexy-qualification-copy h2 span{color:#7c879d}
+.nexy-qualification-copy>p{color:#94a3b8;line-height:1.7;margin:1.5rem 0 0}
+.nexy-form-benefits{display:grid;gap:.8rem;margin-top:2.5rem}
+.nexy-form-benefits div{
+  display:flex;align-items:center;gap:1rem;
+  padding:.9rem 0;border-top:1px solid rgba(255,255,255,.08);
+}
+.nexy-form-benefits strong{color:#a78bfa;font-size:.72rem}
+.nexy-form-benefits span{color:#cbd5e1}
+.nexy-lead-form{
+  padding:2rem;
+  border:1px solid rgba(148,163,184,.14);
+  border-radius:2rem;
+  background:linear-gradient(145deg,rgba(15,23,42,.88),rgba(3,7,18,.94))!important;
+  box-shadow:0 35px 100px rgba(0,0,0,.32);
+}
+.nexy-form-progress{
+  height:3px;
+  margin-bottom:2rem;
+  border-radius:999px;
+  overflow:hidden;
+  background:rgba(255,255,255,.08);
+}
+.nexy-form-progress span{
+  display:block;height:100%;width:0;
+  background:linear-gradient(90deg,#2563eb,#c084fc);
+  transition:width .25s ease;
+}
+.nexy-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.nexy-lead-form label{display:grid;gap:.5rem}
+.nexy-lead-form label>span{color:#cbd5e1;font-size:.76rem;font-weight:650}
+.nexy-form-full{grid-column:1/-1}
+.nexy-lead-form input,
+.nexy-lead-form select,
+.nexy-lead-form textarea{
+  width:100%;
+  border:1px solid rgba(148,163,184,.15);
+  border-radius:1rem;
+  background:#050b18;
+  color:#fff;
+  padding:1rem;
+  outline:none;
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+.nexy-lead-form select{appearance:auto}
+.nexy-lead-form input::placeholder,
+.nexy-lead-form textarea::placeholder{color:#475569}
+.nexy-lead-form input:focus,
+.nexy-lead-form select:focus,
+.nexy-lead-form textarea:focus{
+  border-color:rgba(167,139,250,.7);
+  box-shadow:0 0 0 4px rgba(139,92,246,.08);
+}
+.nexy-consent{
+  display:flex!important;
+  grid-template-columns:auto 1fr!important;
+  align-items:flex-start;
+  gap:.75rem!important;
+  margin-top:1.2rem;
+}
+.nexy-consent input{width:17px;height:17px;margin-top:2px;accent-color:#8b5cf6}
+.nexy-consent span{color:#94a3b8!important;font-weight:400!important;line-height:1.5}
+.nexy-submit-button{
+  width:100%;
+  min-height:3.8rem;
+  display:flex;align-items:center;justify-content:center;gap:.8rem;
+  margin-top:1.4rem;
+  border:0;border-radius:999px;
+  background:linear-gradient(100deg,#2563eb,#9333ea);
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 15px 45px rgba(79,70,229,.3);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.nexy-submit-button:hover{transform:translateY(-3px);box-shadow:0 20px 60px rgba(79,70,229,.4)}
+.nexy-form-status{min-height:1.4rem;margin:.8rem 0 0;text-align:center;color:#a7f3d0;font-size:.78rem}
+@media(max-width:900px){.nexy-section-intro--row{display:block}
+.nexy-text-link{display:inline-block;margin-top:1.4rem}
+.nexy-process-grid{grid-template-columns:1fr 1fr}
+.nexy-proof-layout,.nexy-qualification-grid{grid-template-columns:1fr;gap:3rem}
+.nexy-qualification-copy{position:relative;top:auto}}
+@media(max-width:620px){.nexy-premium-section{padding:5.5rem 1rem}
+.nexy-section-intro{margin-bottom:2.8rem}
+.nexy-section-intro h2{font-size:clamp(2.5rem,12vw,3.6rem)}
+.nexy-process-grid{grid-template-columns:1fr}
+.nexy-process-step{min-height:240px}
+.nexy-process-step h3{margin-top:3rem}
+.nexy-project-grid{grid-template-columns:1fr}
+.nexy-project-premium--wide{grid-column:auto}
+.nexy-project-premium--wide .nexy-project-media{aspect-ratio:16/10}
+.nexy-proof-layout{gap:2rem}
+.nexy-lead-form{padding:1.2rem;border-radius:1.5rem}
+.nexy-form-grid{grid-template-columns:1fr}
+.nexy-form-full{grid-column:auto}}
+:root{color-scheme:dark}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:hidden}
+img,video{max-width:100%}
+img{height:auto}
+.nexy-premium-section,
+.nexy-site footer{
+  content-visibility:auto;
+  contain-intrinsic-size:900px;
+}
+.nexy-fullhero{
+  content-visibility:visible;
+  contain:none;
+}
+.nexy-process-step,.nexy-project-premium,.nexy-testimonial,.nexy-lead-form{
+  contain:layout paint;
+}
+a,button,input,select,textarea{
+  -webkit-tap-highlight-color:transparent;
+}
+button,a{touch-action:manipulation}
+input,select,textarea{font-size:16px}
+.nexy-section-intro h2,
+.nexy-qualification-copy h2,
+.nexy-fullhero h1,
+.nexy-project-meta h3{
+  overflow-wrap:anywhere;
+}
+@media(hover:none){.nexy-project-premium:hover,.nexy-fullhero__button:hover,.nexy-submit-button:hover{
+    transform:none;
+  }}
+@media(max-width:1024px){.nexy-premium-container{width:min(100%,920px)}
+.nexy-fullhero__inner{gap:2.25rem}
+.nexy-project-meta{align-items:flex-start}}
+@media(max-width:767px){.nexy-fullhero{
+    min-height:100svh;
+    padding-left:1rem;
+    padding-right:1rem;
+  }
+.nexy-fullhero__particles--two,
+  .nexy-fullhero__grain{
+    display:none;
+  }
+.nexy-fullhero__particles{
+    opacity:.07;
+    animation-duration:28s;
+  }
+.nexy-site nav{
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    background:rgba(2,6,23,.96)!important;
+  }
+.nexy-project-premium,.nexy-testimonial,.nexy-lead-form{
+    box-shadow:none!important;
+  }
+.nexy-project-premium{
+    transform:none!important;
+  }
+.nexy-project-meta{
+    padding:1.2rem;
+  }
+.nexy-project-meta h3{
+    font-size:1.15rem;
+  }
+.nexy-form-grid{
+    gap:.85rem;
+  }
+.nexy-lead-form input,
+  .nexy-lead-form select,
+  .nexy-lead-form textarea{
+    min-height:48px;
+  }
+.nexy-submit-button{
+    min-height:54px;
+  }}
+@media(max-width:390px){.nexy-fullhero h1{font-size:2.55rem}
+.nexy-fullhero__visual-space{min-height:310px}
+.nexy-fullhero__metrics{
+    grid-template-columns:1fr 1fr 1fr;
+  }
+.nexy-fullhero__metrics strong{font-size:.86rem}
+.nexy-fullhero__metrics span{font-size:.56rem}
+.nexy-section-intro h2,
+  .nexy-qualification-copy h2{font-size:2.25rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }}
+.nexy-fullhero__inner{
+  grid-template-columns:minmax(0,58%) minmax(0,42%)!important;
+  gap:1.5rem!important;
+}
+.nexy-fullhero__copy{
+  min-width:0;
+  max-width:760px;
+}
+.nexy-fullhero h1{
+  font-size:clamp(3.35rem,5.45vw,6.15rem)!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+}
+.nexy-fullhero h1 span{
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+}
+.nexy-site nav{
+  left:0;
+  right:0;
+}
+.nexy-site main,
+.nexy-site section,
+.nexy-site footer{
+  width:100%;
+  min-width:0;
+}
+@media(max-width:1100px){.nexy-fullhero__inner{
+    grid-template-columns:minmax(0,62%) minmax(0,38%)!important;
+  }
+.nexy-fullhero h1{
+    font-size:clamp(3.1rem,5.7vw,5.35rem)!important;
+  }}
+@media(max-width:900px){.nexy-fullhero__inner{
+    grid-template-columns:1fr!important;
+  }
+.nexy-fullhero__copy{
+    max-width:760px;
+    margin:0 auto;
+  }
+.nexy-fullhero h1{
+    font-size:clamp(3rem,10vw,5rem)!important;
+  }}
+@media(max-width:620px){.nexy-fullhero h1{
+    font-size:clamp(2.65rem,13vw,4rem)!important;
+  }}
+@media(max-width:767px){.nexy-fullhero{
+    min-height:100svh!important;
+    padding-top:5.7rem!important;
+    padding-bottom:3rem!important;
+    align-items:flex-start!important;
+  }
+.nexy-fullhero__inner{display:block!important}
+.nexy-fullhero__visual-space{
+    height:52svh!important;
+    min-height:340px!important;
+    max-height:520px!important;
+  }
+.nexy-fullhero__video{
+    width:100%!important;
+    height:58svh!important;
+    min-height:380px!important;
+    object-fit:cover!important;
+    object-position:50% 18%!important;
+    transform:none!important;
+  }
+.nexy-fullhero__overlay{
+    background:
+      linear-gradient(180deg,rgba(2,6,23,.03) 0%,rgba(2,6,23,.05) 45%,rgba(2,6,23,.88) 68%,#020617 100%)!important;
+  }
+.nexy-fullhero__copy{
+    position:relative;
+    z-index:6;
+    margin-top:-1.4rem!important;
+    padding:0 .1rem;
+    text-align:center;
+  }
+.nexy-fullhero__eyebrow{
+    margin-bottom:1rem;
+    font-size:.57rem!important;
+    letter-spacing:.17em!important;
+  }
+.nexy-fullhero h1{
+    max-width:100%!important;
+    font-size:clamp(2.5rem,11.7vw,3.75rem)!important;
+    line-height:.93!important;
+    letter-spacing:-.055em!important;
+    text-wrap:balance;
+  }
+.nexy-fullhero p{
+    max-width:34rem;
+    margin:1.25rem auto 0!important;
+    font-size:.95rem!important;
+    line-height:1.55!important;
+  }
+.nexy-fullhero__actions{margin-top:1.5rem!important}
+.nexy-fullhero__metrics{
+    margin-top:1.8rem!important;
+    padding-top:1rem!important;
+  }
+.nexy-fullhero__scroll{display:none!important}}
+@media(max-width:390px){.nexy-fullhero__video{
+    height:54svh!important;
+    min-height:350px!important;
+    object-position:50% 14%!important;
+  }
+.nexy-fullhero__visual-space{
+    height:48svh!important;
+    min-height:315px!important;
+  }
+.nexy-fullhero h1{
+    font-size:clamp(2.25rem,11.5vw,3.15rem)!important;
+  }
+.nexy-fullhero__eyebrow{font-size:.52rem!important}}
+@media(max-width:767px){.nexy-fullhero{
+    min-height:auto!important;
+    padding-bottom:4.5rem!important;
+  }
+.nexy-fullhero__visual-space{
+    height:42svh!important;
+    min-height:285px!important;
+    max-height:410px!important;
+  }
+.nexy-fullhero__video{
+    height:49svh!important;
+    min-height:330px!important;
+    max-height:500px!important;
+    object-position:50% 14%!important;
+  }
+.nexy-fullhero__copy{
+    margin-top:-.25rem!important;
+  }}
+@media(max-width:390px){.nexy-fullhero__visual-space{
+    height:38svh!important;
+    min-height:260px!important;
+  }
+.nexy-fullhero__video{
+    height:45svh!important;
+    min-height:305px!important;
+  }}
+@media(max-width:767px){.nexy-site nav{
+    background:linear-gradient(180deg,rgba(2,6,23,.72),rgba(2,6,23,.18),transparent)!important;
+    border-bottom-color:rgba(255,255,255,.08)!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    pointer-events:auto;
+  }
+.nexy-site nav .max-w-6xl{
+    min-height:72px!important;
+  }
+.nexy-site nav img{
+    width:62px!important;
+    height:62px!important;
+  }
+.nexy-fullhero{
+    padding-top:0!important;
+  }
+.nexy-fullhero__video{
+    top:0!important;
+    height:58svh!important;
+    min-height:420px!important;
+    object-position:50% 12%!important;
+  }
+.nexy-fullhero__visual-space{
+    height:48svh!important;
+    min-height:360px!important;
+  }
+.nexy-fullhero__copy{
+    margin-top:-1.1rem!important;
+    padding:0 .25rem!important;
+  }
+.nexy-fullhero__eyebrow{
+    font-size:.52rem!important;
+    letter-spacing:.16em!important;
+    margin-bottom:.8rem!important;
+  }
+.nexy-fullhero h1{
+    font-size:clamp(2.2rem,10.2vw,3.25rem)!important;
+    line-height:.96!important;
+    letter-spacing:-.045em!important;
+    text-wrap:balance!important;
+    max-width:680px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+.nexy-fullhero h1 span{
+    display:inline!important;
+  }
+.nexy-fullhero p{
+    font-size:.96rem!important;
+    line-height:1.55!important;
+    max-width:34rem!important;
+  }
+.nexy-fullhero__actions{
+    gap:.8rem!important;
+  }
+.nexy-fullhero__button{
+    min-height:54px!important;
+    font-size:1rem!important;
+  }}
+@media(max-width:390px){.nexy-site nav .max-w-6xl{
+    min-height:64px!important;
+  }
+.nexy-site nav img{
+    width:56px!important;
+    height:56px!important;
+  }
+.nexy-fullhero__video{
+    height:55svh!important;
+    min-height:390px!important;
+    object-position:50% 10%!important;
+  }
+.nexy-fullhero__visual-space{
+    height:45svh!important;
+    min-height:330px!important;
+  }
+.nexy-fullhero h1{
+    font-size:clamp(2rem,10vw,2.8rem)!important;
+  }}
+@media(max-width:767px){.nexy-site nav{
+    background:linear-gradient(180deg,rgba(2,6,23,.58),rgba(2,6,23,.12),transparent)!important;
+  }
+.nexy-site nav .max-w-6xl{
+    min-height:54px!important;
+    padding-left:8px!important;
+    padding-right:10px!important;
+  }
+.nexy-site nav a:first-child{
+    margin-left:-4px!important;
+  }
+.nexy-site nav img{
+    width:42px!important;
+    height:42px!important;
+  }
+.nexy-fullhero{
+    min-height:auto!important;
+    padding-top:0!important;
+    padding-bottom:1.25rem!important;
+  }
+.nexy-fullhero__video{
+    height:43svh!important;
+    min-height:300px!important;
+    max-height:390px!important;
+    object-fit:cover!important;
+    object-position:50% 9%!important;
+  }
+.nexy-fullhero__visual-space{
+    height:29svh!important;
+    min-height:195px!important;
+    max-height:245px!important;
+  }
+.nexy-fullhero__copy{
+    margin-top:-.35rem!important;
+  }
+.nexy-fullhero__actions{
+    margin-top:1.15rem!important;
+  }
+.nexy-fullhero__metrics{
+    margin-top:1.35rem!important;
+  }}
+@media(max-width:390px){.nexy-site nav .max-w-6xl{
+    min-height:50px!important;
+    padding-left:6px!important;
+  }
+.nexy-site nav img{
+    width:38px!important;
+    height:38px!important;
+  }
+.nexy-fullhero__video{
+    height:40svh!important;
+    min-height:280px!important;
+    max-height:350px!important;
+    object-position:50% 8%!important;
+  }
+.nexy-fullhero__visual-space{
+    height:26svh!important;
+    min-height:175px!important;
+    max-height:215px!important;
+  }
+.nexy-fullhero{
+    padding-bottom:1rem!important;
+  }}
+.nexy-fullhero{
+  min-height:clamp(680px,88svh,860px)!important;
+  background:#020617;
+}
+.nexy-fullhero__video{z-index:0!important;}
+.nexy-fullhero__overlay{z-index:1!important;}
+.nexy-fullhero__grain{z-index:2!important;}
+.nexy-fullhero__particles{z-index:2!important;}
+.nexy-fullhero__particles--two{z-index:4!important;}
+.nexy-fullhero__inner{z-index:5!important;}
+.nexy-fullhero__scroll{z-index:6!important;}
+.nexy-fullhero__visual-space{min-height:500px!important;}
+.nexy-services{padding-top:clamp(3.5rem,6vw,5.5rem)!important;}
+@media(max-width:900px){.nexy-fullhero{min-height:auto!important;}}
+@media(max-width:767px){.nexy-fullhero{
+    min-height:auto!important;
+    padding-bottom:1.25rem!important;
+  }
+.nexy-fullhero__video{z-index:0!important;}
+.nexy-fullhero__visual-space{display:none!important;}
+.nexy-services{padding-top:2.25rem!important;}
+.skip-link{display:none!important;}}
+.nexy-services{
+  isolation:isolate;
+  padding-top:clamp(5.5rem,8vw,8rem)!important;
+  background:
+    radial-gradient(circle at 8% 10%,rgba(37,99,235,.12),transparent 28%),
+    radial-gradient(circle at 92% 36%,rgba(147,51,234,.13),transparent 29%),
+    linear-gradient(180deg,#05091a 0%,#020617 42%,#040816 100%)!important;
+}
+.nexy-services::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  width:auto!important;
+  height:auto!important;
+  right:auto!important;
+  top:auto!important;
+  border-radius:0!important;
+  filter:none!important;
+  opacity:.26;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(148,163,184,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(148,163,184,.055) 1px,transparent 1px)!important;
+  background-size:54px 54px!important;
+  mask-image:linear-gradient(to bottom,black,transparent 82%);
+}
+.nexy-services::after{
+  content:"";
+  position:absolute;
+  width:24rem;
+  height:24rem;
+  right:-9rem;
+  top:24%;
+  border-radius:50%;
+  background:rgba(99,102,241,.12);
+  filter:blur(85px);
+  pointer-events:none;
+}
+.nexy-services .nexy-premium-container{
+  position:relative;
+  z-index:2;
+}
+.nexy-services-heading{
+  display:grid;
+  grid-template-columns:minmax(220px,.62fr) minmax(0,1.38fr);
+  gap:clamp(2rem,6vw,6rem);
+  align-items:start;
+  margin-bottom:clamp(3rem,5vw,4.5rem);
+}
+.nexy-services-heading__label{
+  padding-top:.35rem;
+}
+.nexy-services-heading__label .nexy-section-kicker{
+  margin-bottom:.85rem;
+}
+.nexy-services-heading__label p{
+  max-width:260px;
+  margin:0;
+  color:#8795aa;
+  font-size:.88rem;
+  line-height:1.55;
+}
+.nexy-services-heading__copy h2{
+  margin:0;
+  max-width:900px;
+  color:#f8fafc;
+  font-size:clamp(2.65rem,4.7vw,5rem);
+  line-height:.98;
+  letter-spacing:-.055em;
+  font-weight:800;
+  text-wrap:balance;
+}
+.nexy-services-heading__copy h2 span{
+  color:#8f9bb0;
+}
+.nexy-services-heading__copy>p{
+  max-width:720px;
+  margin:1.45rem 0 0;
+  color:#b8c4d5;
+  font-size:1.05rem;
+  line-height:1.72;
+}
+.nexy-story-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
+  grid-template-areas:
+    "trust speed"
+    "trust search"
+    "conversion conversion";
+  gap:1rem;
+}
+.nexy-story-card{
+  position:relative;
+  min-width:0;
+  padding:clamp(1.55rem,2.5vw,2.15rem);
+  overflow:hidden;
+  border:1px solid rgba(148,163,184,.14);
+  border-radius:1.5rem;
+  background:
+    linear-gradient(145deg,rgba(15,23,42,.9),rgba(4,8,20,.96))!important;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.045),
+    0 24px 64px rgba(0,0,0,.22);
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+}
+.nexy-story-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(139,92,246,.38);
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.06),
+    0 30px 78px rgba(0,0,0,.3);
+}
+.nexy-story-card--trust{
+  grid-area:trust;
+  min-height:610px;
+  padding-bottom:18.5rem;
+}
+.nexy-story-card--speed{grid-area:speed}
+.nexy-story-card--search{grid-area:search}
+.nexy-story-card--conversion{
+  grid-area:conversion;
+  display:grid;
+  grid-template-columns:minmax(260px,.74fr) minmax(0,1.26fr);
+  gap:3rem;
+  align-items:center;
+}
+.nexy-story-card__top{
+  display:flex;
+  align-items:center;
+  gap:.85rem;
+}
+.nexy-story-card__top>span{
+  color:#9aa9be;
+  font-size:.63rem;
+  font-weight:800;
+  letter-spacing:.17em;
+}
+.nexy-story-icon{
+  flex:none;
+  width:2.75rem;
+  height:2.75rem;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(147,197,253,.22);
+  border-radius:.85rem;
+  background:linear-gradient(145deg,rgba(37,99,235,.2),rgba(147,51,234,.17));
+  box-shadow:0 12px 32px rgba(79,70,229,.14);
+}
+.nexy-story-icon svg{
+  width:1.25rem;
+  height:1.25rem;
+  fill:none;
+  stroke:#d8b4fe;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.nexy-story-card h3{
+  max-width:700px;
+  margin:1.65rem 0 .8rem;
+  color:#f8fafc;
+  font-size:clamp(1.65rem,2.4vw,2.55rem);
+  line-height:1.04;
+  letter-spacing:-.04em;
+  text-wrap:balance;
+}
+.nexy-story-card>p,
+.nexy-story-card__content>p{
+  max-width:650px;
+  margin:0;
+  color:#b8c4d5;
+  line-height:1.67;
+}
+.nexy-story-list{
+  list-style:none;
+  padding:0;
+  margin:1.7rem 0 0;
+}
+.nexy-story-list li{
+  position:relative;
+  padding:.72rem 0 .72rem 1.4rem;
+  border-top:1px solid rgba(148,163,184,.11);
+  color:#d4deeb;
+}
+.nexy-story-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:1.13rem;
+  width:.45rem;
+  height:.45rem;
+  border-radius:50%;
+  background:linear-gradient(135deg,#60a5fa,#c084fc);
+  box-shadow:0 0 16px rgba(139,92,246,.45);
+}
+.nexy-real-project{
+  position:absolute;
+  left:2rem;
+  right:2rem;
+  bottom:0;
+  display:block;
+  color:inherit!important;
+  text-decoration:none!important;
+}
+.nexy-real-project__browser{
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.13);
+  border-bottom:0;
+  border-radius:1.15rem 1.15rem 0 0;
+  background:#050812;
+  box-shadow:0 30px 80px rgba(0,0,0,.44);
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+}
+.nexy-real-project:hover .nexy-real-project__browser{
+  transform:translateY(-7px);
+}
+.nexy-real-project__bar{
+  height:38px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:0 13px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  background:#0a1020;
+}
+.nexy-real-project__bar span{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#64748b;
+}
+.nexy-real-project__bar i{
+  display:block;
+  max-width:45%;
+  margin-left:9px;
+  overflow:hidden;
+  color:#637088;
+  font-size:.56rem;
+  font-style:normal;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.nexy-real-project__screen{
+  height:230px;
+  overflow:hidden;
+  background:#0f172a;
+}
+.nexy-real-project__screen img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:top;
+  transition:transform .8s cubic-bezier(.16,1,.3,1);
+}
+.nexy-real-project:hover img{
+  transform:scale(1.035);
+}
+.nexy-real-project__caption{
+  position:absolute;
+  left:1rem;
+  right:1rem;
+  bottom:1rem;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:1rem;
+  padding:2.8rem 1rem .9rem;
+  background:linear-gradient(180deg,transparent,rgba(2,6,23,.94));
+  pointer-events:none;
+}
+.nexy-real-project__caption span,
+.nexy-real-project__caption strong{
+  display:block;
+}
+.nexy-real-project__caption span{
+  color:#c4b5fd;
+  font-size:.57rem;
+  font-weight:800;
+  letter-spacing:.17em;
+}
+.nexy-real-project__caption strong{
+  color:#fff;
+  font-size:.86rem;
+}
+.nexy-speed-score{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-top:1.7rem;
+  padding:1.05rem 1.15rem;
+  border:1px solid rgba(147,197,253,.14);
+  border-radius:1rem;
+  background:linear-gradient(135deg,rgba(37,99,235,.11),rgba(147,51,234,.1));
+}
+.nexy-speed-score strong{
+  flex:none;
+  color:transparent;
+  background:linear-gradient(120deg,#93c5fd,#c084fc);
+  -webkit-background-clip:text;
+  background-clip:text;
+  font-size:clamp(2.75rem,4.5vw,4.1rem);
+  line-height:.85;
+  letter-spacing:-.07em;
+}
+.nexy-speed-score sup{
+  font-size:.44em;
+  vertical-align:top;
+}
+.nexy-speed-score div span,
+.nexy-speed-score div small{
+  display:block;
+}
+.nexy-speed-score div span{
+  color:#e2e8f0;
+  font-size:.75rem;
+  font-weight:800;
+}
+.nexy-speed-score div small{
+  margin-top:.28rem;
+  color:#7f8da3;
+  font-size:.63rem;
+  line-height:1.35;
+}
+.nexy-search-result{
+  margin-top:1.6rem;
+  padding:1rem 1.1rem;
+  border:1px solid rgba(147,197,253,.13);
+  border-radius:1rem;
+  background:rgba(2,6,23,.58);
+}
+.nexy-search-result span,
+.nexy-search-result strong,
+.nexy-search-result small{
+  display:block;
+}
+.nexy-search-result span{
+  color:#93c5fd;
+  font-size:.63rem;
+}
+.nexy-search-result strong{
+  margin:.42rem 0 .3rem;
+  color:#e9d5ff;
+  font-size:.94rem;
+}
+.nexy-search-result small{
+  color:#8c9ab0;
+  line-height:1.45;
+}
+.nexy-lead-journey{
+  display:grid;
+  grid-template-columns:repeat(7,auto);
+  align-items:center;
+  justify-content:end;
+  gap:.75rem;
+}
+.nexy-lead-journey>div{
+  min-width:105px;
+  padding:1rem .85rem;
+  border:1px solid rgba(148,163,184,.13);
+  border-radius:1rem;
+  background:rgba(255,255,255,.025);
+  text-align:center;
+}
+.nexy-lead-journey i,
+.nexy-lead-journey strong,
+.nexy-lead-journey span{
+  display:block;
+  font-style:normal;
+}
+.nexy-lead-journey i{
+  width:1.65rem;
+  height:1.65rem;
+  display:grid;
+  place-items:center;
+  margin:0 auto .65rem;
+  border-radius:50%;
+  background:linear-gradient(135deg,rgba(37,99,235,.25),rgba(147,51,234,.25));
+  color:#c4b5fd;
+  font-size:.53rem;
+}
+.nexy-lead-journey strong{
+  color:#f1f5f9;
+  font-size:.75rem;
+}
+.nexy-lead-journey span{
+  margin-top:.25rem;
+  color:#758399;
+  font-size:.58rem;
+  line-height:1.3;
+}
+.nexy-lead-journey>b{
+  position:relative;
+  width:28px;
+  height:1px;
+  overflow:hidden;
+  background:rgba(148,163,184,.16);
+}
+.nexy-lead-journey>b::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,transparent,#60a5fa,#c084fc);
+  animation:nexyLeadPulse 2s ease-in-out infinite;
+}
+@keyframes nexyLeadPulse{
+  0%{transform:translateX(-110%);opacity:0}
+  35%{opacity:1}
+  100%{transform:translateX(120%);opacity:0}
+}
+@media(max-width:980px){.nexy-services-heading{
+    grid-template-columns:1fr;
+    gap:1.5rem;
+  }
+.nexy-services-heading__label p{max-width:none}
+.nexy-story-card--conversion{
+    grid-template-columns:1fr;
+    gap:2rem;
+  }
+.nexy-lead-journey{
+    justify-content:start;
+  }}
+@media(max-width:760px){.nexy-services{
+    padding-top:4.5rem!important;
+  }
+.nexy-services-heading__copy h2{
+    font-size:clamp(2.35rem,11vw,3.55rem);
+  }
+.nexy-services-heading__copy>p{
+    font-size:.96rem;
+  }
+.nexy-story-grid{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "trust"
+      "speed"
+      "search"
+      "conversion";
+  }
+.nexy-story-card{
+    padding:1.35rem;
+    border-radius:1.25rem;
+    box-shadow:none;
+  }
+.nexy-story-card--trust{
+    min-height:auto;
+    padding-bottom:15rem;
+  }
+.nexy-real-project{
+    left:1.35rem;
+    right:1.35rem;
+  }
+.nexy-real-project__screen{height:188px}
+.nexy-lead-journey{
+    grid-template-columns:1fr;
+    justify-content:stretch;
+    gap:.55rem;
+  }
+.nexy-lead-journey>div{
+    min-width:0;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    grid-template-rows:auto auto;
+    column-gap:.75rem;
+    text-align:left;
+  }
+.nexy-lead-journey i{
+    grid-row:1/3;
+    margin:auto;
+  }
+.nexy-lead-journey span{margin-top:.12rem}
+.nexy-lead-journey>b{
+    width:1px;
+    height:14px;
+    margin:0 auto;
+  }
+.nexy-lead-journey>b::after{
+    background:linear-gradient(180deg,transparent,#60a5fa,#c084fc);
+    animation:nexyLeadPulseVertical 2s ease-in-out infinite;
+  }
+@keyframes nexyLeadPulseVertical{
+    0%{transform:translateY(-110%);opacity:0}
+    35%{opacity:1}
+    100%{transform:translateY(120%);opacity:0}
+  }}
+@media(max-width:390px){.nexy-story-card--trust{padding-bottom:14rem}
+.nexy-real-project__screen{height:174px}}
+@media(prefers-reduced-motion:reduce){.nexy-lead-journey>b::after{
+    animation:none!important;
+  }}
+.nexy-header-slot{
+  position:relative;
+  z-index:50;
+  height:0;
+}
+.nexy-header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+  z-index:50;
+}
+@media(max-width:1100px){.nexy-header-slot{
+    height:var(--nexy-responsive-header-height,88px);
+    background:#020617;
+    border-bottom:1px solid rgba(139,92,246,.18);
+  }
+.nexy-site .nexy-header{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    background:#020617!important;
+    border-bottom:1px solid rgba(139,92,246,.2)!important;
+    box-shadow:none!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+  }
+.nexy-site .nexy-header.is-fixed{
+    position:fixed!important;
+    top:0!important;
+    left:0!important;
+    right:0!important;
+    background:rgba(2,6,23,.98)!important;
+    border-bottom-color:rgba(139,92,246,.28)!important;
+    box-shadow:0 12px 36px rgba(0,0,0,.3)!important;
+  }
+.nexy-header .max-w-7xl>div:last-child{
+    gap:1.45rem!important;
+    font-size:.75rem!important;
+    letter-spacing:.13em!important;
+  }
+.nexy-fullhero{
+    padding-top:clamp(5.5rem,8vw,7.5rem)!important;
+  }}
+@media(max-width:767px){.nexy-header-slot{
+    height:var(--nexy-responsive-header-height,66px);
+  }
+.nexy-site .nexy-header .max-w-7xl{
+    min-height:66px!important;
+    padding-top:.45rem!important;
+    padding-bottom:.45rem!important;
+    padding-left:1rem!important;
+    padding-right:1rem!important;
+  }
+.nexy-site .nexy-header img{
+    width:48px!important;
+    height:48px!important;
+  }
+.nexy-fullhero__video{
+    top:0!important;
+  }}
+@media(max-width:390px){.nexy-header-slot{
+    height:var(--nexy-responsive-header-height,60px);
+  }
+.nexy-site .nexy-header .max-w-7xl{
+    min-height:60px!important;
+    padding-top:.35rem!important;
+    padding-bottom:.35rem!important;
+  }
+.nexy-site .nexy-header img{
+    width:44px!important;
+    height:44px!important;
+  }}
+.nexy-services{
+  padding-bottom:clamp(5.5rem,8vw,8rem)!important;
+}
+.nexy-process{
+  padding-top:clamp(5rem,8vw,7rem)!important;
+}
+.nexy-story-card--trust{
+  min-height:auto!important;
+  padding-bottom:2rem!important;
+  display:flex!important;
+  flex-direction:column!important;
+}
+.nexy-real-project{
+  position:relative!important;
+  left:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  width:100%!important;
+  margin-top:2rem!important;
+}
+.nexy-real-project__browser{
+  width:100%;
+}
+.nexy-real-project__screen{
+  height:clamp(230px,25vw,310px)!important;
+}
+.nexy-real-project__screen img{
+  object-position:top center!important;
+}
+.nexy-real-project__caption{
+  left:.65rem!important;
+  right:.65rem!important;
+  bottom:.65rem!important;
+  padding:2rem .9rem .75rem!important;
+}
+.nexy-section-intro h2 span,
+.nexy-services-heading__copy h2 span,
+.nexy-qualification-copy h2 span{
+  color:transparent!important;
+  background:linear-gradient(
+    100deg,
+    #60a5fa 0%,
+    #8b5cf6 48%,
+    #c084fc 100%
+  )!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;
+}
+.nexy-section-intro h2,
+.nexy-services-heading__copy h2,
+.nexy-qualification-copy h2{
+  color:#f8fafc!important;
+}
+.nexy-services{
+  padding-bottom:clamp(5rem,7vw,7rem)!important;
+}
+.nexy-process{
+  padding-top:clamp(5rem,7vw,7rem)!important;
+}
+@media(max-width:760px){.nexy-story-card--trust{
+    padding-bottom:1.35rem!important;
+  }
+.nexy-real-project{
+    margin-top:1.5rem!important;
+  }
+.nexy-real-project__screen{
+    height:210px!important;
+  }}
+@media(max-width:390px){.nexy-real-project__screen{
+    height:185px!important;
+  }}
+.nexy-services-heading{
+  display:block!important;
+  max-width:1120px;
+  margin:0 auto clamp(2.8rem,4.5vw,4rem)!important;
+}
+.nexy-services-heading__label{
+  display:flex!important;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:2rem;
+  width:100%;
+  padding:0 0 1.1rem!important;
+  margin:0 0 clamp(1.7rem,3vw,2.5rem)!important;
+  border-bottom:1px solid rgba(148,163,184,.13);
+}
+.nexy-services-heading__label .nexy-section-kicker{
+  margin:0!important;
+  flex:none;
+}
+.nexy-services-heading__label p{
+  max-width:360px!important;
+  margin:0!important;
+  text-align:right;
+  color:#9aa8bc!important;
+  font-size:.86rem!important;
+  line-height:1.5!important;
+}
+.nexy-services-heading__copy{
+  width:100%;
+}
+.nexy-services-heading__copy h2{
+  max-width:1050px!important;
+  margin:0!important;
+  font-size:clamp(2.75rem,4.35vw,4.85rem)!important;
+  line-height:1!important;
+  letter-spacing:-.052em!important;
+  text-wrap:balance!important;
+}
+.nexy-services-heading__copy h2 span{
+  display:inline!important;
+}
+.nexy-services-heading__copy>p{
+  max-width:760px!important;
+  margin:1.35rem 0 0 auto!important;
+  padding-left:clamp(0rem,6vw,5rem);
+  color:#b8c4d5!important;
+  font-size:1rem!important;
+  line-height:1.68!important;
+}
+.nexy-services{
+  padding-top:clamp(4.5rem,6.8vw,6.5rem)!important;
+  padding-bottom:clamp(4.8rem,6.8vw,6.8rem)!important;
+}
+.nexy-story-grid{
+  margin-top:0!important;
+}
+.nexy-section-intro{
+  margin-bottom:clamp(2.8rem,4vw,3.6rem)!important;
+}
+.nexy-section-intro--compact{
+  max-width:850px!important;
+}
+.nexy-section-intro--row{
+  align-items:flex-start!important;
+}
+.nexy-process,
+.nexy-portfolio,
+.nexy-proof,
+.nexy-qualification{
+  padding-top:clamp(4.8rem,7vw,7rem)!important;
+  padding-bottom:clamp(4.8rem,7vw,7rem)!important;
+}
+@media(min-width:1280px){.nexy-premium-container{
+    width:min(1240px,calc(100% - 5rem))!important;
+  }
+.nexy-services-heading{
+    max-width:1180px;
+  }
+.nexy-services-heading__copy h2{
+    max-width:1120px!important;
+  }}
+@media(max-width:900px){.nexy-services-heading__label{
+    align-items:flex-start;
+  }
+.nexy-services-heading__copy>p{
+    margin-left:0!important;
+    padding-left:0!important;
+  }}
+@media(max-width:620px){.nexy-services-heading{
+    margin-bottom:2.5rem!important;
+  }
+.nexy-services-heading__label{
+    display:block!important;
+    padding-bottom:.9rem!important;
+    margin-bottom:1.5rem!important;
+  }
+.nexy-services-heading__label p{
+    max-width:none!important;
+    margin-top:.65rem!important;
+    text-align:left!important;
+  }
+.nexy-services-heading__copy h2{
+    font-size:clamp(2.35rem,11vw,3.45rem)!important;
+    line-height:1.01!important;
+  }
+.nexy-services-heading__copy>p{
+    margin-top:1rem!important;
+    font-size:.95rem!important;
+  }
+.nexy-services{
+    padding-top:3.8rem!important;
+    padding-bottom:4.3rem!important;
+  }}
+.nexy-services-heading__copy h2,
+.nexy-section-intro h2,
+.nexy-qualification-copy h2{
+  margin-top:0!important;
+  color:#f8fafc!important;
+  font-family:inherit!important;
+  font-size:clamp(2.7rem,4.5vw,5rem)!important;
+  font-weight:400!important;
+  line-height:.98!important;
+  letter-spacing:-.055em!important;
+  text-wrap:balance!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+}
+.nexy-services-heading__copy h2 span,
+.nexy-section-intro h2 span,
+.nexy-qualification-copy h2 span{
+  display:inline!important;
+  color:transparent!important;
+  background:linear-gradient(
+    100deg,
+    #60a5fa 0%,
+    #7c6cff 48%,
+    #c084fc 100%
+  )!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;
+}
+@media(max-width:900px){.nexy-services-heading__copy h2,
+  .nexy-section-intro h2,
+  .nexy-qualification-copy h2{
+    font-size:clamp(2.55rem,7.5vw,4.35rem)!important;
+    line-height:1!important;
+  }}
+@media(max-width:620px){.nexy-services-heading__copy h2,
+  .nexy-section-intro h2,
+  .nexy-qualification-copy h2{
+    font-size:clamp(2.25rem,11vw,3.45rem)!important;
+    line-height:1.01!important;
+    letter-spacing:-.05em!important;
+  }}
+@media(max-width:390px){.nexy-services-heading__copy h2,
+  .nexy-section-intro h2,
+  .nexy-qualification-copy h2{
+    font-size:clamp(2.05rem,10.5vw,2.85rem)!important;
+  }}
+/* Ajuste final do hero em telas menores: preserva o desktop e evita que a
+   descrição encoste na borda inferior do vídeo em tablets/celulares. */
+@media(max-width:767px){
+  .nexy-fullhero{
+    padding-top:clamp(2.75rem,8vh,4.25rem)!important;
+    padding-bottom:clamp(3rem,8vh,5rem)!important;
+  }
+  .nexy-fullhero__copy{
+    margin-top:0!important;
+    transform:translateY(-.75rem)!important;
+  }
+}
+@media(max-width:767px) and (max-height:600px){
+  .nexy-fullhero{
+    padding-top:1.75rem!important;
+    padding-bottom:3rem!important;
+  }
+  .nexy-fullhero__copy{
+    transform:translateY(-1rem)!important;
+  }
+}
+.nexy-whatsapp-popup{
+  position:fixed;
+  right:clamp(1rem,2.5vw,1.75rem);
+  bottom:clamp(1rem,2.5vw,1.75rem);
+  z-index:999;
+  animation:nexyWhatsappFloat 3.2s ease-in-out infinite;
+}
+.nexy-whatsapp-float{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  min-height:64px;
+  padding:.48rem .55rem .48rem 1rem;
+  color:#fff!important;
+  text-decoration:none!important;
+  background:linear-gradient(135deg,rgba(15,23,42,.97),rgba(30,17,55,.98));
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:1.15rem;
+  box-shadow:0 18px 42px rgba(2,6,23,.5),0 0 30px rgba(139,92,246,.22);
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.nexy-whatsapp-float:hover{
+  transform:scale(1.045);
+  border-color:rgba(196,181,253,.62);
+  box-shadow:0 22px 48px rgba(2,6,23,.6),0 0 38px rgba(139,92,246,.38);
+}
+.nexy-whatsapp-float:focus-visible{
+  outline:3px solid #fff;
+  outline-offset:4px;
+}
+.nexy-whatsapp-copy{display:flex;flex-direction:column;gap:.18rem;white-space:nowrap}
+.nexy-whatsapp-copy small{color:#c4b5fd;font-size:.67rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.nexy-whatsapp-copy strong{color:#fff;font-size:.88rem;line-height:1.15}
+.nexy-whatsapp-icon{
+  position:relative;
+  flex:0 0 52px;
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:linear-gradient(135deg,#a855f7,#6d28d9);
+  border-radius:50%;
+  box-shadow:0 8px 22px rgba(124,58,237,.48);
+}
+.nexy-whatsapp-icon::after{
+  content:"";
+  position:absolute;
+  inset:-5px;
+  border:1px solid rgba(168,85,247,.34);
+  border-radius:50%;
+  animation:nexyWhatsappRing 2.2s ease-out infinite;
+}
+.nexy-whatsapp-icon svg{width:29px;height:29px;display:block;fill:currentColor;transform:none}
+@keyframes nexyWhatsappFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-11px,0)}}
+@keyframes nexyWhatsappRing{0%,45%{transform:scale(.86);opacity:.7}85%,100%{transform:scale(1.22);opacity:0}}
+@media(max-width:620px){
+  .nexy-whatsapp-popup{right:1rem;bottom:1rem}
+  .nexy-whatsapp-float{min-height:58px;padding:.4rem .45rem .4rem .85rem;gap:.6rem}
+  .nexy-whatsapp-copy small{font-size:.6rem}
+  .nexy-whatsapp-copy strong{font-size:.78rem}
+  .nexy-whatsapp-icon{flex-basis:47px;width:47px;height:47px}
+  .nexy-whatsapp-icon svg{width:26px;height:26px}
+}
+@media(max-width:390px){.nexy-whatsapp-copy{display:none}.nexy-whatsapp-float{padding:.38rem;border-radius:50%}}
+@media(prefers-reduced-motion:reduce){.nexy-whatsapp-popup,.nexy-whatsapp-icon::after{animation:none}}
+
+/* =========================================================
+   AJUSTE NEXYFLOW — HEADER SEM SOBREPOR O HERO
+   Mantém o menu original, mas dentro do fluxo da página.
+   ========================================================= */
+.nexy-header-slot{
+  height:auto!important;
+  position:relative!important;
+  z-index:50!important;
+  background:#020617!important;
+}
+.nexy-site .nexy-header{
+  position:relative!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+  inset:auto!important;
+  width:100%!important;
+  background:rgba(2,6,23,.98)!important;
+  border-bottom:1px solid rgba(139,92,246,.18)!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+.nexy-site .nexy-header.is-fixed{
+  position:relative!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+  box-shadow:none!important;
+}
+.nexy-fullhero{
+  padding-top:clamp(4.4rem,7vw,6.5rem)!important;
+}
+
+/* =========================================================
+   AJUSTE NEXYFLOW — ABERTURA "O QUE MUDA NA PRÁTICA"
+   Mais clara, visível e conectada a site + tráfego.
+   ========================================================= */
+.nexy-services{
+  scroll-margin-top:0!important;
+}
+.nexy-services-heading{
+  display:grid!important;
+  grid-template-columns:minmax(185px,.34fr) minmax(0,1fr)!important;
+  gap:clamp(2.25rem,5vw,5.5rem)!important;
+  align-items:start!important;
+  max-width:1180px!important;
+  margin:0 auto clamp(3.2rem,5vw,4.8rem)!important;
+}
+.nexy-services-heading__label{
+  display:block!important;
+  padding:.25rem 0 0!important;
+  margin:0!important;
+  border:0!important;
+}
+.nexy-services-heading__label .nexy-section-kicker{
+  display:block!important;
+  margin:0 0 .95rem!important;
+}
+.nexy-services-heading__label p{
+  max-width:230px!important;
+  margin:0!important;
+  text-align:left!important;
+  color:#9aa8bc!important;
+  font-size:.9rem!important;
+  line-height:1.6!important;
+}
+.nexy-services-heading__copy{
+  width:100%!important;
+  min-width:0!important;
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+}
+.nexy-services-heading__copy h2{
+  display:block!important;
+  max-width:940px!important;
+  margin:0!important;
+  color:#f8fafc!important;
+  opacity:1!important;
+  visibility:visible!important;
+  font-size:clamp(2.55rem,4.15vw,4.7rem)!important;
+  font-weight:450!important;
+  line-height:1.01!important;
+  letter-spacing:-.052em!important;
+}
+.nexy-services-heading__copy h2 span{
+  display:inline!important;
+}
+.nexy-story-grid{
+  position:relative!important;
+  z-index:2!important;
+}
+
+@media(max-width:900px){
+  .nexy-services-heading{
+    grid-template-columns:1fr!important;
+    gap:1.5rem!important;
+  }
+  .nexy-services-heading__label{
+    padding-bottom:1rem!important;
+    border-bottom:1px solid rgba(148,163,184,.13)!important;
+  }
+  .nexy-services-heading__label p{
+    max-width:none!important;
+  }
+}
+@media(max-width:620px){
+  .nexy-fullhero{
+    padding-top:3.5rem!important;
+  }
+  .nexy-services-heading{
+    margin-bottom:2.6rem!important;
+  }
+  .nexy-services-heading__copy h2{
+    font-size:clamp(2.2rem,10.6vw,3.25rem)!important;
+    line-height:1.02!important;
+  }
+}
+
+
+/* =========================================================
+   NEXYFLOW — PORTFÓLIO V2
+   Editorial, leve e baseado nos projetos existentes.
+   ========================================================= */
+.nexy-portfolio-v2{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 78% 14%,rgba(91,33,182,.13),transparent 26rem),
+    #030712!important;
+}
+.nexy-portfolio-v2::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:linear-gradient(rgba(148,163,184,.026) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(148,163,184,.026) 1px,transparent 1px);
+  background-size:58px 58px;
+  mask-image:linear-gradient(to bottom,black,transparent 74%);
+}
+.nexy-portfolio-head{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 260px;
+  gap:clamp(2rem,6vw,6rem);
+  align-items:end;
+  margin-bottom:3.2rem;
+}
+.nexy-portfolio-head h2{
+  max-width:920px;
+  margin:.9rem 0 1rem;
+  font-size:clamp(2.65rem,4.8vw,5.35rem);
+  line-height:.96;
+  letter-spacing:-.058em;
+  font-weight:500;
+}
+.nexy-portfolio-head h2 span{
+  color:#b8a6ff;
+}
+.nexy-portfolio-head p{
+  max-width:700px;
+  margin:0;
+  color:#8f9caf;
+  font-size:1rem;
+  line-height:1.75;
+}
+.nexy-portfolio-all{
+  position:relative;
+  display:grid!important;
+  grid-template-columns:1fr auto;
+  grid-template-areas:"kicker icon" "title icon";
+  gap:.2rem 1rem;
+  align-items:center;
+  min-height:118px;
+  padding:1.25rem 1.35rem!important;
+  color:#fff!important;
+  text-decoration:none!important;
+  border:1px solid rgba(148,163,184,.14)!important;
+  border-radius:1.35rem!important;
+  background:rgba(9,13,29,.72)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+  transition:border-color .25s ease,background .25s ease,transform .25s ease!important;
+}
+.nexy-portfolio-all:hover{
+  transform:translateY(-3px);
+  border-color:rgba(167,139,250,.42)!important;
+  background:rgba(15,20,41,.9)!important;
+}
+.nexy-portfolio-all span{
+  grid-area:kicker;
+  color:#7f8a9c;
+  font-size:.61rem;
+  font-weight:800;
+  letter-spacing:.18em;
+}
+.nexy-portfolio-all strong{
+  grid-area:title;
+  font-size:.95rem;
+}
+.nexy-portfolio-all i{
+  grid-area:icon;
+  width:42px;height:42px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:#8b5cf6;
+  font-style:normal;
+  font-size:1rem;
+}
+.nexy-case-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1.15rem;
+}
+.nexy-case{
+  min-width:0;
+  overflow:hidden;
+  border:1px solid rgba(148,163,184,.13);
+  border-radius:1.65rem;
+  background:rgba(6,11,25,.88)!important;
+  box-shadow:0 18px 54px rgba(0,0,0,.16);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s ease,box-shadow .35s ease;
+}
+.nexy-case:hover{
+  transform:translateY(-5px);
+  border-color:rgba(167,139,250,.35);
+  box-shadow:0 24px 70px rgba(0,0,0,.3);
+}
+.nexy-case--featured{
+  grid-column:1/-1;
+}
+.nexy-case--wide{
+  grid-column:1/-1;
+}
+.nexy-case>a{
+  display:block;
+  color:inherit!important;
+  text-decoration:none!important;
+}
+.nexy-case-browser{
+  margin:.75rem .75rem 0;
+  overflow:hidden;
+  border:1px solid rgba(148,163,184,.12);
+  border-radius:1.1rem;
+  background:#060914;
+}
+.nexy-case-browser__top{
+  height:38px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:.75rem;
+  align-items:center;
+  padding:0 .9rem;
+  border-bottom:1px solid rgba(148,163,184,.1);
+  background:#0a0f1f;
+}
+.nexy-case-dots{display:flex;gap:5px}
+.nexy-case-dots i{
+  width:6px;height:6px;border-radius:50%;
+  background:#344056;
+}
+.nexy-case-browser__top>span{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  text-align:center;
+  color:#59677d;
+  font-size:.62rem;
+  letter-spacing:.025em;
+}
+.nexy-case-browser__top>b{
+  color:#637089;
+  font-size:.75rem;
+}
+.nexy-case-media{
+  position:relative;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#0b1120;
+}
+.nexy-case--featured .nexy-case-media{
+  aspect-ratio:21/8;
+}
+.nexy-case--wide .nexy-case-media{
+  aspect-ratio:21/8.5;
+}
+.nexy-case-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transform:scale(1.001);
+  transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .4s ease;
+}
+.nexy-case:hover .nexy-case-media img{
+  transform:scale(1.035);
+  filter:saturate(1.04) contrast(1.02);
+}
+.nexy-case-hover{
+  position:absolute;
+  right:1rem;
+  bottom:1rem;
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  padding:.6rem .65rem .6rem .85rem;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:999px;
+  background:rgba(2,6,23,.76);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  opacity:0;
+  transform:translateY(9px);
+  transition:opacity .28s ease,transform .28s ease;
+}
+.nexy-case:hover .nexy-case-hover{
+  opacity:1;
+  transform:none;
+}
+.nexy-case-hover span{
+  color:#dfe6f3;
+  font-size:.58rem;
+  font-weight:800;
+  letter-spacing:.12em;
+}
+.nexy-case-hover b{
+  width:28px;height:28px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:#8b5cf6;
+  color:#fff;
+}
+.nexy-case-info{
+  display:flex;
+  justify-content:space-between;
+  gap:1.5rem;
+  align-items:flex-end;
+  padding:1.25rem 1.4rem 1.45rem;
+}
+.nexy-case-title{
+  min-width:0;
+}
+.nexy-case-title>span{
+  display:block;
+  margin-bottom:.55rem;
+  color:#9b88ef;
+  font-size:.61rem;
+  font-weight:800;
+  letter-spacing:.17em;
+}
+.nexy-case-title h3{
+  max-width:700px;
+  margin:0;
+  font-size:clamp(1.15rem,1.55vw,1.55rem);
+  line-height:1.18;
+  letter-spacing:-.035em;
+  font-weight:650;
+}
+.nexy-case--featured .nexy-case-title h3,
+.nexy-case--wide .nexy-case-title h3{
+  font-size:clamp(1.35rem,2.15vw,2rem);
+}
+.nexy-case-tags{
+  flex:none;
+  display:flex;
+  justify-content:flex-end;
+  gap:.4rem;
+  flex-wrap:wrap;
+}
+.nexy-case-tags span{
+  padding:.43rem .7rem;
+  border:1px solid rgba(148,163,184,.14);
+  border-radius:999px;
+  color:#8995a8;
+  background:rgba(15,23,42,.52);
+  font-size:.62rem;
+  white-space:nowrap;
+}
+.nexy-portfolio-bottom{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  margin-top:1.2rem;
+  padding:1.1rem .15rem 0;
+  color:#65738a;
+  font-size:.82rem;
+}
+.nexy-portfolio-bottom a{
+  display:inline-flex!important;
+  align-items:center;
+  gap:.55rem;
+  color:#d8deea!important;
+  text-decoration:none!important;
+  font-weight:700;
+}
+.nexy-portfolio-bottom a b{color:#a78bfa}
+
+@media(max-width:820px){
+  .nexy-portfolio-head{
+    grid-template-columns:1fr;
+    gap:1.7rem;
+  }
+  .nexy-portfolio-all{
+    min-height:auto;
+    max-width:100%;
+  }
+  .nexy-case-grid{
+    grid-template-columns:1fr;
+  }
+  .nexy-case--featured,.nexy-case--wide{grid-column:auto}
+  .nexy-case--featured .nexy-case-media,
+  .nexy-case--wide .nexy-case-media{
+    aspect-ratio:16/10;
+  }
+  .nexy-case-info{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:1rem;
+  }
+  .nexy-case-tags{justify-content:flex-start}
+}
+@media(max-width:520px){
+  .nexy-portfolio-head h2{
+    font-size:clamp(2.3rem,10vw,3rem);
+  }
+  .nexy-case-browser{
+    margin:.5rem .5rem 0;
+  }
+  .nexy-case-browser__top{
+    height:34px;
+  }
+  .nexy-case-media{
+    aspect-ratio:4/3!important;
+  }
+  .nexy-case-info{
+    padding:1.05rem 1.05rem 1.2rem;
+  }
+  .nexy-case-hover{
+    opacity:1;
+    transform:none;
+    right:.7rem;
+    bottom:.7rem;
+  }
+  .nexy-case-hover span{display:none}
+  .nexy-portfolio-bottom{
+    align-items:flex-start;
+    flex-direction:column;
+    padding-top:1.25rem;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .nexy-case,.nexy-case-media img,.nexy-case-hover,.nexy-portfolio-all{
+    transition:none!important;
+  }
+}
+
+/* Planet Celulares: mais altura para mostrar os iPhones completos */
+.nexy-case--planet .nexy-case-media{aspect-ratio:16/10;}
+@media(max-width:767px){.nexy-case--planet .nexy-case-media{aspect-ratio:4/3;}}
+
+/* === NEXYFLOW LIVE PROJECT PREVIEWS === */
+.nexy-live-preview{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  background:#050814;
+}
+.nexy-live-preview iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:1440px;
+  height:900px;
+  border:0;
+  transform-origin:top left;
+  pointer-events:none;
+  background:#050814;
+}
+.nexy-case-media .nexy-live-preview,
+.nexy-real-project__screen .nexy-live-preview{
+  width:100%;
+  height:100%;
+}
+.nexy-case-media::after,
+.nexy-real-project__screen::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.018),transparent 24%);
+}
+@media(max-width:767px){
+  .nexy-live-preview iframe{width:980px;height:760px}
+}
+@media(max-width:520px){
+  .nexy-live-preview iframe{width:820px;height:700px}
+}
+
+
+/* === PORTFÓLIO COMPLETO — CTA EM DESTAQUE === */
+.nexy-portfolio-all{
+  min-height:142px!important;
+  padding:1.45rem 1.55rem!important;
+  border:1px solid rgba(167,139,250,.42)!important;
+  background:
+    radial-gradient(circle at 86% 18%,rgba(139,92,246,.28),transparent 42%),
+    linear-gradient(135deg,rgba(17,24,39,.98),rgba(15,23,42,.92))!important;
+  box-shadow:0 16px 45px rgba(76,29,149,.20),inset 0 1px 0 rgba(255,255,255,.05)!important;
+}
+.nexy-portfolio-all::after{
+  content:"+ projetos reais • vários nichos";
+  grid-column:1/-1;
+  margin-top:.45rem;
+  color:#9da8bb;
+  font-size:.68rem;
+  letter-spacing:.03em;
+}
+.nexy-portfolio-all span{color:#c4b5fd!important;font-size:.65rem!important;}
+.nexy-portfolio-all strong{font-size:1.08rem!important;line-height:1.2;}
+.nexy-portfolio-all i{
+  width:48px!important;height:48px!important;
+  background:linear-gradient(135deg,#8b5cf6,#6d5dfc)!important;
+  box-shadow:0 10px 28px rgba(139,92,246,.32);
+}
+.nexy-portfolio-all:hover{
+  transform:translateY(-4px) scale(1.01)!important;
+  border-color:rgba(196,181,253,.72)!important;
+  box-shadow:0 22px 60px rgba(76,29,149,.30),inset 0 1px 0 rgba(255,255,255,.07)!important;
+}
+.nexy-portfolio-bottom{
+  margin-top:1.6rem!important;
+  padding:1.35rem 1.45rem!important;
+  border:1px solid rgba(148,163,184,.14);
+  border-radius:1.25rem;
+  background:linear-gradient(135deg,rgba(15,23,42,.82),rgba(10,15,32,.92));
+  color:#a9b3c4!important;
+}
+.nexy-portfolio-bottom>span{
+  color:#cbd5e1;
+  font-weight:600;
+}
+.nexy-portfolio-bottom a{
+  flex:none;
+  padding:.8rem 1.05rem;
+  border-radius:999px;
+  background:#8b5cf6;
+  color:#fff!important;
+  box-shadow:0 10px 28px rgba(139,92,246,.24);
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease!important;
+}
+.nexy-portfolio-bottom a:hover{
+  transform:translateY(-2px);
+  background:#9b6df8;
+  box-shadow:0 14px 34px rgba(139,92,246,.32);
+}
+.nexy-portfolio-bottom a b{color:#fff!important;}
+@media(max-width:820px){
+  .nexy-portfolio-all{min-height:126px!important;}
+}
+@media(max-width:520px){
+  .nexy-portfolio-all{
+    padding:1.2rem 1.15rem!important;
+    min-height:118px!important;
+  }
+  .nexy-portfolio-all strong{font-size:1rem!important;}
+  .nexy-portfolio-all::after{font-size:.62rem;}
+  .nexy-portfolio-bottom{
+    padding:1.1rem!important;
+    gap:.9rem!important;
+  }
+  .nexy-portfolio-bottom a{
+    width:100%;
+    justify-content:center;
+  }
+}
+
+/* NEXYFLOW — refinamento tipográfico 2026 */
+:root{
+  --nexy-font:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --nexy-display:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+body,.nexy-site,button,input,select,textarea{font-family:var(--nexy-font)!important}
+.nexy-fullhero h1,
+.nexy-section-intro h2,
+.nexy-qualification-copy h2,
+.nexy-case-title h3,
+.nexy-story-card h3,
+.nexy-process-step h3,
+.nexy-testimonial p{
+  font-family:var(--nexy-display)!important;
+  font-feature-settings:"ss01" 1,"ss02" 1,"kern" 1;
+}
+.nexy-fullhero h1{
+  font-weight:700!important;
+  letter-spacing:-.062em!important;
+  line-height:.91!important;
+  max-width:840px!important;
+}
+.nexy-fullhero h1 span{
+  font-weight:500!important;
+  color:#aeb8cc!important;
+  -webkit-text-fill-color:initial!important;
+  background:none!important;
+}
+.nexy-fullhero__eyebrow,
+.nexy-section-kicker,
+.nexy-story-card__top>span,
+.nexy-form-head>span{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace!important;
+  font-weight:600!important;
+  letter-spacing:.17em!important;
+  text-transform:uppercase;
+}
+.nexy-section-intro h2,
+.nexy-qualification-copy h2{
+  font-weight:650!important;
+  letter-spacing:-.055em!important;
+}
+.nexy-section-intro h2 span,
+.nexy-qualification-copy h2 span{
+  font-weight:500!important;
+  color:#8f9bb0!important;
+}
+.nexy-story-card h3,
+.nexy-process-step h3,
+.nexy-case-title h3{
+  font-weight:650!important;
+  letter-spacing:-.035em!important;
+}
+.nexy-fullhero__button{
+  font-weight:700!important;
+  letter-spacing:-.01em!important;
+}
+.nexy-fullhero__metrics strong{
+  font-size:.74rem!important;
+  letter-spacing:.08em!important;
+}
+.nexy-fullhero__metrics span{
+  font-size:.75rem!important;
+  color:#8792a8!important;
+}
+.nexy-lead-form--clean{
+  background:rgba(5,10,22,.82)!important;
+  border:1px solid rgba(148,163,184,.13)!important;
+  box-shadow:0 28px 80px rgba(0,0,0,.24)!important;
+  backdrop-filter:blur(18px);
+}
+.nexy-form-head strong{
+  font-weight:600!important;
+  letter-spacing:-.02em;
+}
+.nexy-lead-form label>span{
+  font-size:.72rem!important;
+  letter-spacing:.015em;
+  color:#9ca9bc!important;
+  font-weight:600!important;
+}
+.nexy-lead-form input,
+.nexy-lead-form select,
+.nexy-lead-form textarea{
+  border-radius:.82rem!important;
+  background:rgba(8,14,28,.9)!important;
+  border-color:rgba(148,163,184,.13)!important;
+  box-shadow:none!important;
+}
+.nexy-lead-form input:focus,
+.nexy-lead-form select:focus,
+.nexy-lead-form textarea:focus{
+  border-color:rgba(125,141,255,.7)!important;
+  box-shadow:0 0 0 3px rgba(99,102,241,.08)!important;
+}
+.nexy-submit-button{
+  border-radius:.9rem!important;
+  background:linear-gradient(110deg,#4765ff,#7147ef)!important;
+  box-shadow:0 14px 36px rgba(71,101,255,.2)!important;
+  font-weight:700!important;
+}
+.nexy-submit-button:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 18px 44px rgba(71,101,255,.28)!important;
+}
+@media(max-width:620px){
+  .nexy-fullhero h1{letter-spacing:-.052em!important}
+  .nexy-fullhero h1 span{display:block;margin-top:.12em}
+}
+
+</style>
+
+<style id="nexy-speed-optimizations">
+/* Performance: postpone expensive below-the-fold rendering without changing layout. */
+#processo,#portfolio,#depoimentos,#contato{content-visibility:auto;contain-intrinsic-size:900px 1200px;}
+.nexy-lazy-frame{background:#050816;}
+@media(max-width:767px){#processo,#portfolio,#depoimentos,#contato{contain-intrinsic-size:1200px 720px;}}
+</style>
+
+<style id="nexy-clean-refresh">
+/* NexyFlow clean refresh — mantém o vídeo do hero e reduz ruído visual. */
+.nexy-header-slot{height:0!important;background:transparent!important;border:0!important;}
+.nexy-site .nexy-header{position:absolute!important;top:0!important;left:0!important;right:0!important;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
+.nexy-clean-nav{width:min(1200px,calc(100% - 2rem));margin:0 auto;padding:1.35rem 0;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+.nexy-clean-brand{display:flex;align-items:center;gap:.7rem;text-decoration:none!important;color:#fff!important;font-size:.72rem;font-weight:800;letter-spacing:.16em;}
+.nexy-clean-brand img{width:48px!important;height:48px!important;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.12);}
+.nexy-clean-links{display:flex;align-items:center;gap:2rem;margin-left:auto;}
+.nexy-clean-links a{font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(226,232,240,.76)!important;text-decoration:none!important;transition:color .2s ease!important;}
+.nexy-clean-links a:hover{color:#fff!important;}
+.nexy-instagram-nav{display:flex;align-items:center;gap:.55rem;padding:.65rem .9rem;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(3,7,18,.18);color:#fff!important;text-decoration:none!important;font-size:.72rem;font-weight:700;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s ease,border-color .2s ease,transform .2s ease!important;}
+.nexy-instagram-nav:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.3);transform:translateY(-1px)!important;}
+.nexy-instagram-nav svg,.nexy-contact-instagram svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;}
+.nexy-fullhero{padding-top:7.4rem!important;}
+.nexy-fullhero__metrics{border-top:1px solid rgba(255,255,255,.09)!important;}
+.nexy-fullhero__metrics div{background:transparent!important;border:0!important;}
+.nexy-premium-section{background:#050814!important;}
+.nexy-story-card,.nexy-process-step,.nexy-case,.nexy-testimonial,.nexy-lead-form{box-shadow:none!important;}
+.nexy-story-card,.nexy-process-step,.nexy-testimonial{background:rgba(255,255,255,.025)!important;border-color:rgba(255,255,255,.08)!important;}
+.nexy-qualification{background:#040711!important;}
+.nexy-qualification-grid{gap:clamp(2.5rem,5vw,5rem)!important;}
+.nexy-lead-form--clean{padding:clamp(1.25rem,3vw,2rem)!important;border:1px solid rgba(255,255,255,.09)!important;background:rgba(255,255,255,.025)!important;border-radius:1.35rem!important;}
+.nexy-form-head{display:flex;justify-content:space-between;gap:1rem;align-items:end;margin-bottom:1.25rem;}
+.nexy-form-head span{font-size:.64rem;letter-spacing:.16em;color:#9ca3af;font-weight:800;}
+.nexy-form-head strong{font-size:.8rem;color:#e5e7eb;font-weight:600;}
+.nexy-lead-form input,.nexy-lead-form select,.nexy-lead-form textarea{background:#070b14!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:.85rem!important;box-shadow:none!important;}
+.nexy-lead-form input:focus,.nexy-lead-form select:focus,.nexy-lead-form textarea:focus{border-color:rgba(167,139,250,.55)!important;box-shadow:0 0 0 3px rgba(139,92,246,.08)!important;}
+.nexy-submit-button{border-radius:.9rem!important;background:#fff!important;color:#070b14!important;box-shadow:none!important;}
+.nexy-submit-button:hover{background:#eef2ff!important;box-shadow:none!important;transform:translateY(-2px)!important;}
+.nexy-contact-instagram{margin-top:1rem;display:grid;grid-template-columns:auto 1fr;column-gap:.7rem;row-gap:.15rem;align-items:center;width:max-content;max-width:100%;padding:.8rem 1rem;border:1px solid rgba(255,255,255,.1);border-radius:1rem;color:#dbe4f3!important;text-decoration:none!important;background:rgba(255,255,255,.02);}
+.nexy-contact-instagram svg{grid-row:1/3;}
+.nexy-contact-instagram span{font-size:.72rem;color:#8792a6;}
+.nexy-contact-instagram strong{font-size:.83rem;color:#fff;}
+footer{background:#03060d!important;}
+@media(max-width:900px){.nexy-clean-links{display:none}.nexy-clean-nav{padding:1rem 0}.nexy-fullhero{padding-top:6.4rem!important;}}
+@media(max-width:520px){.nexy-clean-brand span{display:none}.nexy-clean-brand img{width:44px!important;height:44px!important}.nexy-instagram-nav{padding:.58rem .75rem}.nexy-instagram-nav span{font-size:.66rem}.nexy-form-head{align-items:flex-start;flex-direction:column;gap:.25rem}.nexy-contact-instagram{width:100%;box-sizing:border-box}.nexy-fullhero{padding-top:5.8rem!important;}}
+</style>
+
+<style id="nexy-preview-cloud-fix">
+.nexy-fullhero h1 span{
+  color:transparent!important;
+  background:linear-gradient(105deg,#60a5fa 0%,#6366f1 46%,#a855f7 100%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  -webkit-text-fill-color:transparent;
+}
+.nexy-live-preview iframe{left:0!important;top:0!important}
+@media(max-width:767px){
+  .nexy-fullhero h1{
+    width:100%;max-width:100%;
+    font-size:clamp(2.55rem,11.5vw,3.65rem)!important;
+    line-height:.94!important;
+    letter-spacing:-.045em!important;
+    overflow-wrap:normal!important;
+    word-break:normal!important;
+  }
+  .nexy-live-preview iframe{width:390px!important;height:844px!important}
+  .nexy-live-preview--planet iframe{height:920px!important}
+  .nexy-animations-ready .reveal,
+  .nexy-animations-ready .card-reveal,
+  .reveal,.card-reveal{
+    opacity:1!important;transform:none!important;filter:none!important;
+    animation:none!important;will-change:auto!important;
+  }
+}
+@media(min-width:768px){
+  .nexy-live-preview iframe{width:1440px!important;height:900px!important}
+  .nexy-live-preview--planet iframe{height:1280px!important}
+}
+</style>
+</head>
+<body data-rsssl=1 data-rsssl=1 class="overflow-x-hidden" onload="document.documentElement.classList.add('tw-ready')">
+<a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+<div class="nexy-site bg-slate-950 text-white">
+<div class="nexy-header-slot" id="nexyHeaderSlot">
+<nav id="nexyHeader" class="nexy-header" aria-label="Navegação principal">
+  <div class="nexy-clean-nav">
+    <a href="#inicio" class="nexy-clean-brand" aria-label="NexyFlow - início">
+      <img fetchpriority="high" fetchpriority="high" src="https://nexyflow.com.br/wp-content/uploads/2026/07/1000274481-1.png" alt="NexyFlow" width="52" height="52" decoding="async">
+      <span>NEXYFLOW</span>
+    </a>
+    <div class="nexy-clean-links">
+      <a href="#serviços">Serviços</a>
+      <a href="https://nexyflow.com.br/?page_id=147">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <a class="nexy-instagram-nav" href="https://www.instagram.com/nexy_flow/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da NexyFlow">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+      <span>@nexy_flow</span>
+    </a>
+  </div>
+</nav>
+</div>
+
+<main id="conteudo-principal">
+<section id="inicio" class="nexy-fullhero" aria-labelledby="nexyHeroTitle">
+  <video
+    id="nexyFullHeroVideo"
+    class="nexy-fullhero__video"
+    muted
+    loop
+    playsinline
+    preload="none"
+    poster="https://nexyflow.com.br/wp-content/uploads/2026/07/nexy-snowboard-poster.webp"
+    aria-hidden="true"
+    disablepictureinpicture
+    disableremoteplayback
+  >
+    <source src="https://nexyflow.com.br/wp-content/uploads/2026/07/nexy-snowboard-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
+    <source src="https://nexyflow.com.br/wp-content/uploads/2026/07/nexy-snowboard-desktop.mp4" type="video/mp4">
+  </video>
+
+  <div class="nexy-fullhero__overlay" aria-hidden="true"></div>
+  <div class="nexy-fullhero__grain" aria-hidden="true"></div>
+  <div class="nexy-fullhero__particles nexy-fullhero__particles--one" aria-hidden="true"></div>
+  <div class="nexy-fullhero__particles nexy-fullhero__particles--two" aria-hidden="true"></div>
+
+  <div class="nexy-fullhero__inner">
+    <div class="nexy-fullhero__copy">
+      <span class="nexy-fullhero__eyebrow">NEXYFLOW • PERFORMANCE DIGITAL</span>
+
+      <h1 id="nexyHeroTitle">
+        Do clique ao cliente.
+        <span>funcionar e vender de verdade.</span>
+      </h1>
+
+      <p>
+        Site, Google Ads e Meta Ads conectados para
+        <strong>gerar oportunidades.</strong>
+      </p>
+
+      <div class="nexy-fullhero__actions">
+        <a
+          class="nexy-fullhero__button nexy-fullhero__button--primary"
+          href="https://wa.me/556198779936?text=Ol%C3%A1%21%20Conheci%20a%20NexyFlow%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Quero estruturar minha aquisição <span>↗</span>
+        </a>
+
+        <a class="nexy-fullhero__button nexy-fullhero__button--secondary" href="#portfolio">
+          Ver portfólio <span>↓</span>
+        </a>
+      </div>
+
+      <div class="nexy-fullhero__metrics" aria-label="Serviços principais">
+        <div><strong>SITE</strong><span>converte atenção</span></div>
+        <div><strong>GOOGLE ADS</strong><span>captura intenção</span></div>
+        <div><strong>META ADS</strong><span>cria demanda</span></div>
+      </div>
+    </div>
+
+    <div class="nexy-fullhero__visual-space" aria-hidden="true"></div>
+  </div>
+
+  <a class="nexy-fullhero__scroll" href="#serviços" aria-label="Ir para serviços">
+    <span></span>
+    explorar
+  </a>
+</section>
+
+<section id="serviços" class="nexy-premium-section nexy-services reveal">
+  <div class="nexy-premium-container">
+    <header class="nexy-services-heading">
+      <div class="nexy-services-heading__label">
+        <span class="nexy-section-kicker">ESTRUTURA, NÃO PEÇAS SOLTAS</span>
+        <p>Do anúncio à visita. Da visita ao clique no WhatsApp.</p>
+      </div>
+
+      <div class="nexy-services-heading__copy">
+        <h2>
+          Aquisição digital para gerar atenção, confiança e contato.
+          <span>Mídia, mensagem e experiência conectadas.</span>
+        </h2>
+      </div>
+    </header>
+
+    <div class="nexy-story-grid">
+      <article class="nexy-story-card nexy-story-card--trust card-reveal">
+        <div class="nexy-story-card__top">
+          <div class="nexy-story-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3 20 7v5c0 4.8-3.2 7.9-8 9-4.8-1.1-8-4.2-8-9V7l8-4Z"></path>
+              <path d="m8.7 12 2.1 2.1 4.7-4.7"></path>
+            </svg>
+          </div>
+          <span>01 • CREDIBILIDADE</span>
+        </div>
+
+        <h3>Sua empresa precisa parecer a escolha certa.</h3>
+        <p>
+          Posicionamento e experiência para gerar confiança antes do contato.
+        </p>
+
+        <ul class="nexy-story-list">
+          <li>Identidade visual própria</li>
+          <li>Experiência perfeita no celular</li>
+          <li>Chamadas para ação estratégicas</li>
+        </ul>
+
+        <a
+          class="nexy-real-project"
+          href="https://planetcelulares.com.br/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Ver projeto real da Planet Celulares"
+        >
+          <div class="nexy-real-project__browser" aria-hidden="true">
+            <div class="nexy-real-project__bar">
+              <span></span><span></span><span></span>
+              <i>planetcelulares.com.br</i>
+            </div>
+            <div class="nexy-real-project__screen">
+              <div class="nexy-live-preview nexy-live-preview--planet" data-live-preview data-preview-focus="bottom">
+                <iframe data-src="https://planetcelulares.com.br/" src="about:blank" title="Prévia ao vivo do site Planet Celulares" loading="lazy" tabindex="-1" aria-hidden="true" class="nexy-lazy-frame"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="nexy-real-project__caption">
+            <span>PROJETO REAL</span>
+            <strong>Planet Celulares ↗</strong>
+          </div>
+        </a>
+      </article>
+
+      <article class="nexy-story-card nexy-story-card--speed card-reveal">
+        <div class="nexy-story-card__top">
+          <div class="nexy-story-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 14a8 8 0 1 1 16 0"></path>
+              <path d="m12 14 4-4"></path>
+              <path d="M6.3 18h11.4"></path>
+            </svg>
+          </div>
+          <span>02 • PERMANÊNCIA</span>
+        </div>
+
+        <h3>Velocidade também converte.</h3>
+        <p>Páginas rápidas, leves e responsivas.</p>
+
+        <div class="nexy-speed-score" aria-label="Meta de desempenho no PageSpeed acima de 95 pontos">
+          <strong>95<sup>+</sup></strong>
+          <div>
+            <span>meta PageSpeed</span>
+            <small>desempenho • estabilidade • experiência</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="nexy-story-card nexy-story-card--search card-reveal">
+        <div class="nexy-story-card__top">
+          <div class="nexy-story-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="m16 16 4 4"></path>
+              <path d="M8.5 11h5"></path>
+            </svg>
+          </div>
+          <span>03 • AQUISIÇÃO</span>
+        </div>
+
+        <h3>Google captura intenção. Meta cria demanda.</h3>
+        <p>Campanhas para captar intenção e criar demanda.</p>
+
+        <div class="nexy-search-result" aria-hidden="true">
+          <span>nexyflow.com.br</span>
+          <strong>Google + Meta conectando público e oferta</strong>
+          <small>Estrutura preparada para receber tráfego e transformar atenção em contato.</small>
+        </div>
+      </article>
+
+      <article class="nexy-story-card nexy-story-card--conversion card-reveal">
+        <div class="nexy-story-card__content">
+          <div class="nexy-story-card__top">
+            <div class="nexy-story-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 5h16v11H8l-4 4V5Z"></path>
+                <path d="M8 9h8"></path>
+                <path d="M8 12h5"></path>
+              </svg>
+            </div>
+            <span>04 • CONVERSÃO</span>
+          </div>
+
+          <h3>A campanha não termina no clique.</h3>
+          <p>
+            WhatsApp e formulários transformam atenção em contato.
+          </p>
+        </div>
+
+        <div class="nexy-lead-journey" aria-label="Jornada do visitante até o pedido de orçamento">
+          <div>
+            <i>01</i>
+            <strong>Visita</strong>
+            <span>o cliente chega</span>
+          </div>
+          <b></b>
+          <div>
+            <i>02</i>
+            <strong>Confiança</strong>
+            <span>entende seu valor</span>
+          </div>
+          <b></b>
+          <div>
+            <i>03</i>
+            <strong>Ação</strong>
+            <span>inicia o contato</span>
+          </div>
+          <b></b>
+          <div>
+            <i>04</i>
+            <strong>Orçamento</strong>
+            <span>vira oportunidade</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<section id="processo" class="nexy-premium-section nexy-process reveal">
+  <div class="nexy-premium-container">
+    <div class="nexy-section-intro nexy-section-intro--compact">
+      <span class="nexy-section-kicker">NOSSO MÉTODO</span>
+      <h2>Estratégia antes da mídia. <span>Clareza antes da escala.</span></h2>
+    </div>
+
+    <div class="nexy-process-grid">
+      <article class="nexy-process-step card-reveal">
+        <span>01</span>
+        <h3>Diagnóstico real</h3>
+        <p>Entendemos oferta, público, canais e gargalos.</p>
+      </article>
+      <article class="nexy-process-step card-reveal">
+        <span>02</span>
+        <h3>Oferta e estrutura</h3>
+        <p>Definimos mensagem, página e jornada.</p>
+      </article>
+      <article class="nexy-process-step card-reveal">
+        <span>03</span>
+        <h3>Campanhas e experiência</h3>
+        <p>Criamos a experiência e ativamos Google e Meta.</p>
+      </article>
+      <article class="nexy-process-step card-reveal">
+        <span>04</span>
+        <h3>Otimização contínua</h3>
+        <p>Ajustamos campanha, mensagem e página continuamente.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="nexy-premium-section nexy-portfolio nexy-portfolio-v2 reveal">
+  <div class="nexy-premium-container">
+    <div class="nexy-portfolio-head">
+      <div>
+        <span class="nexy-section-kicker">TRABALHO REAL</span>
+        <h2>Projetos pensados para funcionar <span>fora do Behance.</span></h2>
+        <p>Design, velocidade e conversão em projetos reais.</p>
+      </div>
+
+      <a href="https://nexyflow.com.br/?page_id=147" target="_blank" rel="noopener noreferrer" class="nexy-portfolio-all" aria-label="Abrir portfólio completo da NexyFlow">
+        <span>PORTFÓLIO COMPLETO</span>
+        <strong>Ver todos os projetos</strong>
+        <i>↗</i>
+      </a>
+    </div>
+
+    <div class="nexy-case-grid">
+      <article class="nexy-case nexy-case--featured card-reveal">
+        <a href="https://sotelasdf.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto Só Telas DF">
+          <div class="nexy-case-browser">
+            <div class="nexy-case-browser__top">
+              <div class="nexy-case-dots"><i></i><i></i><i></i></div>
+              <span>sotelasdf.com.br</span>
+              <b>↗</b>
+            </div>
+            <div class="nexy-case-media">
+              <div class="nexy-live-preview" data-live-preview>
+                <iframe data-src="https://sotelasdf.com.br/" src="about:blank" title="Prévia ao vivo do site Só Telas DF" loading="lazy" tabindex="-1" aria-hidden="true" class="nexy-lazy-frame"></iframe>
+              </div>
+              <div class="nexy-case-hover"><span>ABRIR PROJETO</span><b>↗</b></div>
+            </div>
+          </div>
+          <div class="nexy-case-info">
+            <div class="nexy-case-title">
+              <span>01 • SÓ TELAS DF</span>
+              <h3>Presença digital para transformar procura em contato.</h3>
+            </div>
+            <div class="nexy-case-tags">
+              <span>Website</span><span>Conversão</span><span>Meta Ads</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="nexy-case card-reveal">
+        <a href="https://ravenafotografia.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto Ravena Fotografia">
+          <div class="nexy-case-browser">
+            <div class="nexy-case-browser__top">
+              <div class="nexy-case-dots"><i></i><i></i><i></i></div>
+              <span>ravenafotografia.com.br</span>
+              <b>↗</b>
+            </div>
+            <div class="nexy-case-media">
+              <div class="nexy-live-preview" data-live-preview>
+                <iframe data-src="https://ravenafotografia.com.br/" src="about:blank" title="Prévia ao vivo do site Ravena Fotografia" loading="lazy" tabindex="-1" aria-hidden="true" class="nexy-lazy-frame"></iframe>
+              </div>
+              <div class="nexy-case-hover"><span>ABRIR PROJETO</span><b>↗</b></div>
+            </div>
+          </div>
+          <div class="nexy-case-info">
+            <div class="nexy-case-title">
+              <span>02 • RAVENA FOTOGRAFIA</span>
+              <h3>Portfólio elegante para elevar percepção de valor.</h3>
+            </div>
+            <div class="nexy-case-tags"><span>Website</span><span>Portfólio</span></div>
+          </div>
+        </a>
+      </article>
+
+      <article class="nexy-case nexy-case--planet card-reveal">
+        <a href="https://planetcelulares.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto Planet Celulares">
+          <div class="nexy-case-browser">
+            <div class="nexy-case-browser__top">
+              <div class="nexy-case-dots"><i></i><i></i><i></i></div>
+              <span>planetcelulares.com.br</span>
+              <b>↗</b>
+            </div>
+            <div class="nexy-case-media">
+              <div class="nexy-live-preview nexy-live-preview--planet" data-live-preview data-preview-focus="bottom">
+                <iframe data-src="https://planetcelulares.com.br/" src="about:blank" title="Prévia ao vivo do site Planet Celulares" loading="lazy" tabindex="-1" aria-hidden="true" class="nexy-lazy-frame"></iframe>
+              </div>
+              <div class="nexy-case-hover"><span>ABRIR PROJETO</span><b>↗</b></div>
+            </div>
+          </div>
+          <div class="nexy-case-info">
+            <div class="nexy-case-title">
+              <span>03 • PLANET CELULARES</span>
+              <h3>Experiência digital criada para valorizar os produtos e facilitar a escolha do iPhone.</h3>
+            </div>
+            <div class="nexy-case-tags"><span>Website</span><span>Varejo</span><span>Conversão</span></div>
+          </div>
+        </a>
+      </article>
+
+      <article class="nexy-case nexy-case--wide card-reveal">
+        <a href="https://recantoourofino.com/canarios/" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto Recanto dos Canários">
+          <div class="nexy-case-browser">
+            <div class="nexy-case-browser__top">
+              <div class="nexy-case-dots"><i></i><i></i><i></i></div>
+              <span>recantoourofino.com/canarios</span>
+              <b>↗</b>
+            </div>
+            <div class="nexy-case-media">
+              <div class="nexy-live-preview" data-live-preview>
+                <iframe data-src="https://recantoourofino.com/canarios/" src="about:blank" title="Prévia ao vivo do site Recanto dos Canários" loading="lazy" tabindex="-1" aria-hidden="true" class="nexy-lazy-frame"></iframe>
+              </div>
+              <div class="nexy-case-hover"><span>ABRIR PROJETO</span><b>↗</b></div>
+            </div>
+          </div>
+          <div class="nexy-case-info">
+            <div class="nexy-case-title">
+              <span>04 • RECANTO DOS CANÁRIOS</span>
+              <h3>Experiência imersiva para transformar interesse em reservas.</h3>
+            </div>
+            <div class="nexy-case-tags"><span>Website</span><span>Experiência</span><span>Conversão</span></div>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <div class="nexy-portfolio-bottom">
+      <span>Quer ver mais? Explore o portfólio completo com projetos de diferentes nichos e estilos.</span>
+      <a href="https://nexyflow.com.br/?page_id=147" target="_blank" rel="noopener noreferrer">Abrir portfólio completo <b>↗</b></a>
+    </div>
+  </div>
+</section>
+
+<section id="depoimentos" class="nexy-premium-section nexy-proof reveal">
+  <div class="nexy-premium-container">
+    <div class="nexy-proof-layout">
+      <div class="nexy-section-intro nexy-section-intro--compact">
+        <span class="nexy-section-kicker">RESULTADO PERCEBIDO</span>
+        <h2>O visual abre a porta. <span>A experiência sustenta a confiança.</span></h2>
+        <div class="nexy-proof-score">
+          <strong>5.0</strong>
+          <span>avaliação média dos projetos</span>
+        </div>
+      </div>
+
+      <div class="nexy-testimonials">
+        <blockquote class="nexy-testimonial card-reveal">
+          <p>“O site ficou top, com excelente estrutura e visual bem moderno. Todos elogiaram a navegabilidade.”</p>
+          <footer><strong>Só Telas DF</strong><span>Empresa de telas de proteção</span></footer>
+        </blockquote>
+
+        <blockquote class="nexy-testimonial card-reveal">
+          <p>“Atendimento rápido e resultado muito profissional. Meu site agora mostra todos os meus trabalhos para meus clientes.”</p>
+          <footer><strong>Ravena Fotografia</strong><span>Fotógrafa profissional</span></footer>
+        </blockquote>
+
+        <blockquote class="nexy-testimonial card-reveal">
+          <p>“O desenvolvimento foi rápido e ficou muito bonito. Me ajudou muito a mostrar projetos e conseguir novos contatos”</p>
+          <footer><strong>Correia Móvies</strong><span>Empresa de móveis planejados</span></footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="nexy-premium-section nexy-qualification reveal">
+  <div class="nexy-premium-container">
+    <div class="nexy-qualification-grid">
+      <div class="nexy-qualification-copy">
+        <span class="nexy-section-kicker">SEU PRÓXIMO MOVIMENTO</span>
+        <h2>Conte onde você está. <span>A gente identifica o próximo passo.</span></h2>
+        <p>Entendemos seu cenário antes de recomendar qualquer estrutura.</p>
+
+        <a class="nexy-fullhero__button nexy-fullhero__button--primary" href="https://wa.me/556198779936?text=Ol%C3%A1%21%20Conheci%20a%20NexyFlow%20pelo%20site%20e%20quero%20entender%20qual%20estrat%C3%A9gia%20faz%20sentido%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" style="margin-top:1.5rem">
+          Falar no WhatsApp <span>↗</span>
+        </a>
+
+        <a class="nexy-contact-instagram" href="https://www.instagram.com/nexy_flow/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+          <span>Veja nossos projetos no Instagram</span><strong>@nexy_flow ↗</strong>
+        </a>
+      </div>
+
+      <form class="nexy-lead-form nexy-lead-form--clean" id="nexyLeadForm">
+        <div class="nexy-form-head">
+          <span>BRIEFING INICIAL</span>
+          <strong>Leva menos de 1 minuto.</strong>
+        </div>
+        <div class="nexy-form-progress"><span id="nexyFormProgress"></span></div>
+
+        <div class="nexy-form-grid">
+          <label>
+            <span>Seu nome *</span>
+            <input type="text" name="nome" autocomplete="name" required placeholder="Seu nome">
+          </label>
+          <label>
+            <span>Empresa *</span>
+            <input type="text" name="empresa" autocomplete="organization" required placeholder="Nome da empresa">
+          </label>
+          <label class="nexy-form-full">
+            <span>O que precisa melhorar primeiro? *</span>
+            <select name="servico" required>
+              <option value="">Selecione</option>
+              <option>Site / landing page</option>
+              <option>Google Ads</option>
+              <option>Meta Ads</option>
+              <option>Site + tráfego pago</option>
+              <option>Preciso de um diagnóstico</option>
+            </select>
+          </label>
+          <label>
+            <span>Segmento *</span>
+            <input type="text" name="segmento" required placeholder="Ex.: móveis planejados">
+          </label>
+          <label>
+            <span>Cidade / Estado *</span>
+            <input type="text" name="cidade" required placeholder="Ex.: Brasília - DF">
+          </label>
+          <label class="nexy-form-full">
+            <span>Qual resultado você quer destravar? *</span>
+            <select name="objetivo" required>
+              <option value="">Selecione</option>
+              <option>Mais pedidos de orçamento</option>
+              <option>Mais vendas</option>
+              <option>Gerar demanda</option>
+              <option>Reposicionar a presença digital</option>
+              <option>Montar a operação do zero</option>
+            </select>
+          </label>
+          <label>
+            <span>Quando quer começar? *</span>
+            <select name="prazo" required>
+              <option value="">Selecione</option>
+              <option>Agora</option>
+              <option>Nos próximos 15 dias</option>
+              <option>Em até 30 dias</option>
+              <option>Estou pesquisando</option>
+            </select>
+          </label>
+          <label>
+            <span>Investimento mensal em mídia</span>
+            <select name="investimento">
+              <option value="">Ainda não defini</option>
+              <option>Até R$ 500</option>
+              <option>R$ 500 a R$ 1.500</option>
+              <option>R$ 1.500 a R$ 3.000</option>
+              <option>Acima de R$ 3.000</option>
+              <option>Não se aplica / quero apenas site</option>
+            </select>
+          </label>
+          <label class="nexy-form-full">
+            <span>O que precisamos saber antes de falar com você?</span>
+            <textarea name="detalhes" rows="3" placeholder="Conte rapidamente seu cenário atual."></textarea>
+          </label>
+        </div>
+
+        <label class="nexy-consent">
+          <input type="checkbox" name="consentimento" required>
+          <span>Autorizo a NexyFlow a entrar em contato pelo WhatsApp.</span>
+        </label>
+
+        <button type="submit" class="nexy-submit-button">
+          Enviar e falar com a Nexyflow <span>↗</span>
+        </button>
+        <p class="nexy-form-status" id="nexyFormStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="border-t border-purple-500/10 py-12 px-6">
+<div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 mb-12">
+<div>
+<p class="font-bold mb-4">NEXY_FLOW</p>
+<p class="text-sm text-slate-400">Sites e tráfego pago para transformar presença digital em oportunidades.</p>
+</div>
+<div>
+<p class="font-bold mb-4 text-sm">SERVIÇOS</p>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a href="#serviços" class="hover:text-purple-400 transition">Sites</a></li>
+<li><a href="#serviços" class="hover:text-purple-400 transition">Google Ads</a></li>
+<li><a href="#serviços" class="hover:text-purple-400 transition">Meta Ads</a></li>
+<li><a href="#portfolio" class="hover:text-purple-400 transition">Portfólio</a></li>
+<li><a href="#contato" class="hover:text-purple-400 transition">Contato</a></li>
+</ul>
+</div>
+<div>
+<p class="font-bold mb-4 text-sm">CONTATO</p>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a href="https://wa.me/556198779936?text=Ol%C3%A1%2C+estou+entrando+em+contato+atrav%C3%A9s+do+site+e+gostaria+de+solicitar+um+or%C3%A7amento." class="hover:text-purple-400 transition" target="_blank">WhatsApp</a></li>
+<li>+55 61 9877-9936</li>
+<li><a href="https://www.instagram.com/nexy_flow/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">Instagram @nexy_flow</a></li>
+</ul>
+</div>
+<div>
+<p class="font-bold mb-4 text-sm">PORTFÓLIO</p>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a href="https://sotelasdf.com.br/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">Sotelas DF</a></li>
+<li><a href="https://ravenafotografia.com.br/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">Ravena Fotografia</a></li>
+<li><a href="https://admirable-figolla-6a498f.netlify.app" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">IO Contingência</a></li>
+<li><a href="https://planetcelulares.com.br/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">Planet Celulares</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-purple-500/10 pt-8 text-center text-sm text-slate-400">
+<p>© 2026 NEXY_FLOW. Todos os direitos reservados.</p>
+<p>Site desenvolvido pela
+<a href="https://nexyflow.com.br" target="_blank" rel="noopener noreferrer" class="transition-colors duration-300" style=" color:#8F34AD; text-decoration:underline; text-decoration-color:#8F34AD ; text-decoration-thickness:1.5px; text-underline-offset:3px; ">
+NexyFlow
+</a>
+</p>
+</div>
+</footer>
+</div>
+<script>
+(function () {
+  function initNexyFlowAnimations() {
+    const root = document.querySelector('.nexy-site');
+    if (!root || root.dataset.animationsReady === 'true') return;
+
+    root.dataset.animationsReady = 'true';
+    root.classList.add('nexy-animations-ready');
+
+    const elements = Array.from(root.querySelectorAll('.reveal, .card-reveal'));
+
+    root.querySelectorAll('.card-reveal').forEach(function (card, index) {
+      card.style.setProperty('--reveal-delay', ((index % 3) * 110) + 'ms');
+    });
+
+    function showElement(element) {
+      if (element.classList.contains('is-visible')) return;
+
+      element.classList.add('is-visible');
+
+      const finish = function () {
+        element.classList.add('animation-done');
+      };
+
+      element.addEventListener('animationend', finish, { once: true });
+      window.setTimeout(finish, 1400);
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          showElement(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -5% 0px'
+      });
+
+      elements.forEach(function (element) {
+        observer.observe(element);
+      });
+    } else {
+      elements.forEach(showElement);
+    }
+
+    requestAnimationFrame(function () {
+      elements.forEach(function (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.94 && rect.bottom > 0) {
+          showElement(element);
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNexyFlowAnimations, { once: true });
+  } else {
+    initNexyFlowAnimations();
+  }
+
+  window.addEventListener('pageshow', initNexyFlowAnimations);
+})();
+</script>
+<script>
+(function () {
+  const hero = document.getElementById('inicio');
+  const video = document.getElementById('nexyFullHeroVideo');
+
+  if (!hero || !video) return;
+
+  let animationFrame = 0;
+
+  function updateHeroScroll() {
+    animationFrame = 0;
+    const rect = hero.getBoundingClientRect();
+    const progress = Math.min(1, Math.max(0, -rect.top / Math.max(1, rect.height * 0.82)));
+    hero.style.setProperty('--hero-scroll', progress.toFixed(4));
+  }
+
+  function requestHeroUpdate() {
+    if (animationFrame) return;
+    animationFrame = requestAnimationFrame(updateHeroScroll);
+  }
+
+  function prepareVideo() {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.loop = true;
+    video.autoplay = false;
+    video.playsInline = true;
+    video.preload = 'none';
+
+    video.setAttribute('muted', '');
+    video.removeAttribute('autoplay');
+    video.setAttribute('loop', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('preload', 'none');
+  }
+
+  function playVideo() {
+    if (video.dataset.started !== '1' || document.visibilityState !== 'visible' || !video.paused) return;
+    const promise = video.play();
+    if (promise && typeof promise.catch === 'function') promise.catch(function () {});
+  }
+
+  prepareVideo();
+
+  window.addEventListener('scroll', function () {
+    requestHeroUpdate();
+  }, { passive: true });
+
+  window.addEventListener('resize', requestHeroUpdate, { passive: true });
+  window.addEventListener('pageshow', playVideo);
+  window.addEventListener('focus', playVideo);
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') {
+      playVideo();
+    } else {
+      video.pause();
+    }
+  });
+
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) playVideo();
+        else video.pause();
+      });
+    }, { threshold: 0.05 });
+    videoObserver.observe(hero);
+  }
+
+  playVideo();
+  updateHeroScroll();
+})();
+</script>
+<script>
+
+(function(){
+  const form=document.getElementById('nexyLeadForm');
+  const progress=document.getElementById('nexyFormProgress');
+  const status=document.getElementById('nexyFormStatus');
+  if(!form)return;
+
+  const requiredFields=Array.from(form.querySelectorAll('[required]'));
+  function updateProgress(){
+    const filled=requiredFields.filter(function(field){
+      if(field.type==='checkbox')return field.checked;
+      return String(field.value||'').trim()!=='';
+    }).length;
+    if(progress)progress.style.width=Math.round((filled/requiredFields.length)*100)+'%';
+  }
+  form.addEventListener('input',updateProgress);
+  form.addEventListener('change',updateProgress);
+
+  form.addEventListener('submit',function(event){
+    event.preventDefault();
+    if(!form.checkValidity()){
+      form.reportValidity();
+      if(status)status.textContent='Preencha os campos obrigatórios para continuar.';
+      return;
+    }
+    const data=new FormData(form);
+    const lines=[
+      'Olá, NexyFlow! Preenchi o diagnóstico rápido pelo site.',
+      '',
+      '*CONTATO*',
+      'Nome: '+data.get('nome'),
+      'Empresa: '+data.get('empresa'),
+      'Segmento: '+data.get('segmento'),
+      'Cidade: '+data.get('cidade'),
+      '',
+      '*OBJETIVO*',
+      'Serviço: '+data.get('servico'),
+      'Objetivo: '+data.get('objetivo'),
+      'Prazo: '+data.get('prazo'),
+      'Mídia mensal: '+(data.get('investimento')||'Ainda não definido'),
+      'Detalhes: '+(data.get('detalhes')||'Não informado')
+    ];
+    if(status)status.textContent='Tudo certo. Abrindo o WhatsApp...';
+    const url='https://wa.me/556198779936?text='+encodeURIComponent(lines.join('\n'));
+    window.open(url,'_blank','noopener,noreferrer');
+  });
+  updateProgress();
+})();
+
+</script>
+
+<script>
+
+(function(){
+  document.querySelectorAll('a[href="#contato"]').forEach(function(link){
+    link.addEventListener('click',function(event){
+      const target=document.getElementById('contato');
+      if(!target)return;
+      event.preventDefault();
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+      setTimeout(function(){
+        const first=target.querySelector('input,select,textarea');
+        if(first)first.focus({preventScroll:true});
+      },700);
+    });
+  });
+})();
+
+</script>
+
+<script>/* Header mantido no fluxo normal da página para não cobrir o hero. */</script>
+
+<div class="nexy-whatsapp-popup">
+  <a
+    class="nexy-whatsapp-float"
+    href="https://wa.me/556198779936?text=Ol%C3%A1%21%20Conheci%20a%20NexyFlow%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar com a NexyFlow pelo WhatsApp"
+  >
+    <span class="nexy-whatsapp-copy" aria-hidden="true">
+      <small>Podemos ajudar?</small>
+      <strong>Fale com a NexyFlow</strong>
+    </span>
+    <span class="nexy-whatsapp-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.075-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 0 1-5.031-1.378l-.361-.214-3.741.981.999-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.447 4.436-9.88 9.888-9.88a9.82 9.82 0 0 1 6.988 2.899 9.825 9.825 0 0 1 2.893 6.99c-.003 5.448-4.437 9.884-9.886 9.884"/>
+      </svg>
+    </span>
+  </a>
+</div>
+
+
+<script>
+(function(){
+  function fitLivePreviews(){
+    document.querySelectorAll('[data-live-preview]').forEach(function(box){
+      var frame=box.querySelector('iframe');
+      if(!frame) return;
+      var isPlanet=box.classList.contains('nexy-live-preview--planet');
+      var isMobile=window.innerWidth<=767;
+      var baseW=isMobile?390:1440;
+      var baseH=isMobile?(isPlanet?920:844):(isPlanet?1280:900);
+      frame.style.width=baseW+'px';
+      frame.style.height=baseH+'px';
+      var w=box.clientWidth||1, h=box.clientHeight||1;
+      /* O preview sempre ocupa toda a largura do card, sem miniaturizar para um canto. */
+      var scale=w/baseW;
+      var scaledW=baseW*scale, scaledH=baseH*scale;
+      var x=0;
+      var y=0;
+      if(!isMobile && box.getAttribute('data-preview-focus')==='bottom'){
+        y=Math.min(0,h-scaledH);
+      }
+      if(!isMobile && isPlanet){
+        var lowerFocus=(scaledH-h)*0.58;
+        y=-Math.max(0,lowerFocus);
+      }
+      frame.style.transform='translate(' + x + 'px,' + y + 'px) scale(' + scale + ')';
+    });
+  }
+  var raf;
+  function requestFit(){cancelAnimationFrame(raf);raf=requestAnimationFrame(fitLivePreviews);}
+  window.addEventListener('resize',requestFit,{passive:true});
+  window.addEventListener('load',requestFit,{once:true});
+  document.addEventListener('DOMContentLoaded',requestFit,{once:true});
+  if('ResizeObserver' in window){
+    var ro=new ResizeObserver(requestFit);
+    document.querySelectorAll('[data-live-preview]').forEach(function(el){ro.observe(el)});
+  }
+  setTimeout(requestFit,300);
+  setTimeout(requestFit,1200);
+})();
+</script>
+
+<script id="nexy-speed-loader">
+(function(){
+  function activateFrame(frame){
+    if(!frame || frame.dataset.loaded==='1') return;
+    var src=frame.getAttribute('data-src');
+    if(!src) return;
+    frame.dataset.loaded='1';
+    frame.src=src;
+  }
+
+  var frames=[].slice.call(document.querySelectorAll('iframe.nexy-lazy-frame[data-src]'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          activateFrame(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    },{rootMargin:'260px 0px',threshold:0.01});
+    frames.forEach(function(frame){io.observe(frame);});
+  }else{
+    window.addEventListener('load',function(){frames.forEach(activateFrame);},{once:true});
+  }
+
+  var hero=document.getElementById('nexyFullHeroVideo');
+  function startHero(){
+    if(!hero || hero.dataset.started==='1') return;
+    hero.dataset.started='1';
+    try{hero.load();var p=hero.play();if(p&&p.catch)p.catch(function(){});}catch(e){}
+  }
+  window.addEventListener('load',function(){
+    if('requestIdleCallback' in window){requestIdleCallback(startHero,{timeout:1800});}
+    else{setTimeout(startHero,900);}
+  },{once:true});
+
+  document.addEventListener('visibilitychange',function(){
+    if(!hero) return;
+    if(document.hidden){try{hero.pause();}catch(e){}}
+    else if(hero.dataset.started==='1'){try{var p=hero.play();if(p&&p.catch)p.catch(function(){});}catch(e){}}
+  });
+})();
+</script>
+</body>
+</html>
